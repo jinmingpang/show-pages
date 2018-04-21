@@ -1,0 +1,258 @@
+
+html,body {
+  font-family: Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,sans-serif;
+}
+
+ul{
+  margin: 0px;
+  padding: 0px;
+}
+li{
+  list-style: none;
+}
+.fullPage-wp{
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.fullPage-wp:after {
+  display: block;
+  content: ' ';
+  height: 0;
+  clear: both;
+}
+.fullPage-wp.anim{
+  -webkit-transition: all 500ms ease-out 0s;
+  transition: all 500ms ease-out 0s;
+}
+.fullPage-page{
+  display: block;
+  overflow: hidden;
+}
+
+.fullPage-dir-h {
+  float: left;
+}
+
+@-webkit-keyframes start {
+  0%,30% {
+      opacity: 0.2;
+      -webkit-transform: translate(0,10px);
+  }
+  60% {
+      opacity: 1;
+      -webkit-transform: translate(0,0);
+  }
+  100% {
+      opacity: 0.2;
+      -webkit-transform: translate(0, -5px);
+  }
+}
+
+@keyframes start {
+  0%,30% {
+      opacity: 0.2;
+      transform: translate(0,10px);
+  }
+  60% {
+      opacity: 1;
+      transform: translate(0,0);
+  }
+  100% {
+      opacity: 0.2;
+      transform: translate(0, -5px);
+  }
+}
+
+.start{
+  position: fixed;
+  left: 50%;
+  margin-left: -17px;
+  top: 95%;
+  margin-top: -34px;
+  width: 34px;
+  height: 34px;
+}
+
+.start i{
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  margin-left: -37px;
+  width: 60px;
+  height: 48px;
+  background: url(../images/up-arrow.png);
+  background-size: 100% 100%;
+  -webkit-animation: start 1.5s infinite ease-in-out;
+  animation: start 1.5s infinite ease-in-out;
+}
+
+.page-outer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.img{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top center;
+}
+
+.hide {
+  display: none;
+}
+
+.bg-base{
+  .img;
+  position: relative;
+  background-size: 1080px 1921px;
+}
+.bg-normal{
+  .bg-base;
+  background-size: 1080px 588px;
+  background-image: url(../images/bg-normal.jpg);
+  &:after{
+    .img;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    content: "";
+    width: 1080px;
+    height: 622px;
+    background-image: url(../images/bg-normal-bottom.jpg);
+  }
+}
+
+.page-4{
+  .bg-base;
+  background-image: url(../images/page-bg.jpg);
+}
+// .page-8{
+//   .bg-base;
+//   background-image: url(../images/bg-no-thing.jpg);
+// }
+// .page-18{
+//   .bg-base;
+//   background-image: url(../images/bg-no-thing.jpg);
+// }
+
+.page:not(.cus-bg){ .bg-normal; }
+
+.w{
+  .img;
+  position: absolute;
+  z-index: 2;
+}
+
+.mask{
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;;
+}
+.bg(@name, @width, @heigt, @top: -1, @left: -1, @bottom: -1, @right: -1) {
+  & when not (@name = -1) {
+    background-image: url("../images/@{name}");
+  }
+  & when (@width >= 0) {
+    width: @width * 1px;
+  }
+  & when (@heigt >= 0) {
+    height: @heigt * 1px;
+  }
+  & when (@left = "center") { // 默认水平居中
+    left: 50%;
+    margin-left: @width/2 * -1px;
+  }
+  & when (@top = "middle") {// 默认垂直居中
+    top: 50%;
+    margin-top: @heigt/2 * -1px;
+  }
+  .pos(@top, @left, @bottom, @right);
+}
+
+.pos(@top: -1, @left: -1, @bottom: -1, @right: -1) {
+  & when (@top >= 0) { // 默认不设置
+    top: @top * 1px;
+  }
+  & when (@left >= 0) { // 默认不设置
+    left: @left * 1px;
+  }
+  & when (@bottom >= 0) { // 默认不设置
+    bottom: @bottom * 1px;
+  }
+  & when (@right >= 0) { // 默认不设置
+    right: @right * 1px;
+  }
+}
+
+.page-7{
+  .bg-base;
+  background-image: url('../images/7.jpg');
+}
+
+.page-7{
+  .bg-base;
+  background-image: url('../images/7.jpg');
+}
+
+.page-8{
+  .bg-base;
+  background-image: url('../images/8.jpg');
+}
+
+.page-9{
+  .bg-base;
+  background-image: url('../images/9.jpg');
+}
+
+.page-10{
+  .bg-base;
+  background-image: url('../images/10.jpg');
+}
+
+.page-11{
+  .bg-base;
+  background-image: url('../images/11.jpg');
+}
+
+.page-12{
+  .bg-base;
+  background-image: url('../images/12.jpg');
+}
+
+.page-13{
+  .bg-base;
+  background-image: url('../images/13.jpg');
+}
+
+.page-14{
+  .bg-base;
+  background-image: url('../images/14.jpg');
+}
+
+.page-15{
+  .bg-base;
+  background-image: url('../images/15.jpg');
+}
+
+.page-16{
+  .bg-base;
+  background-image: url('../images/16.jpg');
+}
+
+.page-17{
+  .bg-base;
+  background-image: url('../images/15.jpg');
+}
+
+.page-18{
+  .bg-base;
+  background-image: url('../images/15.jpg');
+}

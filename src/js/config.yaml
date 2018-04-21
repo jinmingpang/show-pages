@@ -1,0 +1,291 @@
+page1:
+  items:
+    w-yun-chui:
+      data:
+        animate: fadeIn
+        time: 500
+    w-xing-shuang:
+      data:
+        animate: swing
+        time: 500
+    w-wang-yuan-jing:
+      data:
+        animate: tada
+        time: 500
+    w-yun-xing:
+      data:
+        animate: wobble
+        time: 500
+    w-qi-qiu:
+      data:
+        animate: jello
+        time: 500
+    w-text-yang-guang:
+      data:
+        animate: bounceIn
+        time: 500
+    shan-fang-lu:
+      data:
+        animate: fadeIn
+        time: 500
+    tan-suo-yu-zhou:
+      data:
+        animate: fadeIn
+        time: 500
+    chao-ji-jie-bao:
+      data:
+        animate: fadeIn
+        time: 500
+page2:
+  items:
+    w-fei-ji-right:
+      data:
+        animate: flip
+        time: 500
+    w-xing-xiao:
+      data:
+        animate: bounceIn
+        time: 500
+    w-fang-da-jing:
+      data:
+        animate: fadeIn
+        time: 500
+    w-tian-wen-jing:
+      data:
+        animate: fadeIn
+        time: 500
+    w-bi-fei-ren:
+      data:
+        animate: fadeIn
+        time: 500
+    w-dna-fenzi:
+      data:
+        animate: fadeIn
+        time: 500
+    w-dian-nao:
+      data:
+        animate: fadeIn
+        time: 500
+
+    line-mulit:
+      data:
+        animate: fadeIn
+        time: 500
+    line-mulit-shu:
+      data:
+        animate: fadeIn
+        time: 500
+    line-mulit-s:
+      data:
+        animate: fadeIn
+        time: 500
+    di-yi-zhang:
+      data:
+        animate: fadeIn
+        time: 500
+    awar-text:
+      data:
+        animate: fadeIn
+        time: 500
+    da-bao-guang:
+      data:
+        animate: fadeIn
+        time: 500
+    shu-ju-zhong-xin:
+      data:
+        animate: fadeIn
+        time: 500
+page3:
+  items:
+    w-fei-ji-right:
+      data:
+        animate: fadeIn
+        time: 500
+    w-yun-xing:
+      data:
+        animate: fadeIn
+        time: 500
+    w-deng-pao:
+      data:
+        animate: fadeIn
+        time: 500
+    w-left-arrow:
+      data:
+        animate: fadeIn
+        time: 500
+    w-right-arrow:
+      data:
+        animate: fadeIn
+        time: 500
+    w-huo-pao:
+      data:
+        animate: fadeIn
+        time: 500
+    w-dian-shi:
+      data:
+        animate: fadeIn
+        time: 500
+
+    wu-da-mei-ti:
+      data:
+        animate: fadeIn
+        time: 500
+    shou-ji-ke:
+      data:
+        animate: fadeIn
+        time: 500
+    shou-ji-li:
+      data:
+        animate: fadeIn
+        time: 500
+
+page4:
+  items:
+    w-yun-xing:
+      data:
+        animate: fadeIn
+        time: 500
+    w-yan-hua:
+      data:
+        animate: fadeIn
+        time: 500
+    bg-mask:
+      data:
+        animate: fadeIn
+        time: 500
+    tan-suo-bao-guang:
+      data:
+        animate: fadeIn
+        time: 500
+    popu-borad:
+      data:
+        animate: fadeIn
+        time: 500
+    w-100:
+      data:
+        animate: fadeIn
+        time: 500
+    xian-shang-bao-guang:
+      data:
+        animate: fadeIn
+        time: 500
+    yi-word:
+      data:
+        animate: fadeIn
+        time: 500
+
+page5:
+  items:
+    w-da-mu-zhi:
+      data:
+        animate: fadeIn
+        time: 500
+    w-xiao-huo-pao:
+      data:
+        animate: fadeIn
+        time: 500
+    w-peng-you:
+      data:
+        animate: fadeIn
+        time: 500
+    w-jiang-bei:
+      data:
+        animate: fadeIn
+        time: 500
+    w-huo-pao:
+      data:
+        animate: fadeIn
+        time: 500
+    w-xing-shuang:
+      data:
+        animate: fadeIn
+        time: 500
+
+    tan-suo-bao-guang:
+      data:
+        animate: fadeIn
+        time: 500
+    lei-ji-xin-zeng:
+      data:
+        animate: fadeIn
+        time: 500
+    maoer-board-chart:
+      data:
+        animate: fadeIn
+        time: 500
+
+page6:
+  items:
+    w-fang-da-jing:
+      data:
+        animate: fadeIn
+        time: 500
+    w-dna-fenzi:
+      data:
+        animate: fadeIn
+        time: 500
+    w-fei-ji-right:
+      data:
+        animate: fadeIn
+        time: 500
+    w-lu-biao:
+      data:
+        animate: fadeIn
+        time: 500
+    yun-xing-da:
+      data:
+        animate: fadeIn
+        time: 500
+    up-down-arrow:
+      data:
+        animate: fadeIn
+        time: 500
+
+    tan-suo-hu-dong:
+      data:
+        animate: fadeIn
+        time: 500
+    w-20:
+      data:
+        animate: fadeIn
+        time: 500
+    mu-zi:
+      data:
+        animate: fadeIn
+        time: 500
+    di-er-zhang:
+      data:
+        animate: fadeIn
+        time: 500
+    yi-jian-ling-xiu:
+      data:
+        animate: fadeIn
+        time: 500
+    board-wan-shua:
+      data:
+        animate: fadeIn
+        time: 500
+    board-ya-zi:
+      data:
+        animate: fadeIn
+        time: 500
+    fu-hao-add:
+      data:
+        animate: fadeIn
+        time: 500
+    interest:
+      data:
+        animate: fadeIn
+        time: 500
+    model:
+      data:
+        animate: fadeIn
+        time: 500
+    san-ya-huo-dong:
+      data:
+        animate: fadeIn
+        time: 500
+
+page18:
+  items:
+    wei-lai:

@@ -1,0 +1,25 @@
+{
+  "name": "atm-h5",
+  "version": "1.0.0",
+  "description": "h5 page for aitamei",
+  "main": "index.html",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && parcel build --out-file index --detailed-report --no-source-maps",
+    "start": "parcel serve index.html -d ./dist --no-cache",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "h5"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.3.0",
+    "babel-preset-env": "^1.6.1",
+    "less": "^2.7.3",
+    "parcel-bundler": "^1.7.1",
+    "postcss-modules": "^1.1.0",
+    "postcss-pxtorem": "^4.0.1"
+  }
+}
