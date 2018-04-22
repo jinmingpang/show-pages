@@ -3,12 +3,29 @@ import '../lib/animate.min.css';
 import '../css/index.less';
 
 import '../lib/flexible';
-import '../lib/anima.min';
 import '../lib/fullpage';
 
 import * as Tpls from './tpl';
 
+const animateCss = (dom, key, val) => {
+  if(!val) return;
+
+  if (key === 'timing') {
+    key = 'timing-function';
+  } else if (key === 'count') {
+    key = 'iteration-count	';
+  }
+
+  dom.style.cssText += `animation-${key}: ${val};-moz-animation-${key}: ${val};-webkit-animation-${key}: ${val};`;
+};
+
 const fullpageConfig = {
+  beforeChange: (e) => {
+    const cur = e.cur;
+    const tplkey = 'page' + (cur + 1);
+    const callback = Tpls[`afterInsert${tplkey.toUpperCase()}`];
+    callback && callback('before');
+  },
   change: (e) => {
     const cur = e.cur; // 当前值
     const $page = document.querySelectorAll('.page')[cur]; // 避免重复加载
@@ -19,24 +36,36 @@ const fullpageConfig = {
         dom.classList.add('hide');
       });
 
-    // 已加载页面直接返回
-    if ($page.dataset.load== '1') {
-        return 1;
-    }
-    // 加载页面
     const tplkey = 'page' + (cur + 1);
     const callback = Tpls[`afterInsert${tplkey.toUpperCase()}`];
-    $page.innerHTML = Tpls[tplkey] || Tpls.getTpl(tplkey);
-    callback && callback();
+    // 已加载页面直接返回
+    if ($page.dataset.load== '1') {
+      callback && callback('after');
+      return 1;
+    }
+
+    // 加载页面
+    $page.innerHTML = Tpls.getTpl(tplkey);
+    callback && callback(tplkey);
     $page.dataset.load = 1;
   },
   afterChange: function (e) {
     // 添加动画属性
-    forEach.call(document.querySelectorAll('.page')[e.cur].querySelectorAll('.css-animate'),
+    const $curPage = document.querySelectorAll('.page')[e.cur];
+    if (!$curPage) return;
+
+    forEach.call($curPage.querySelectorAll('.css-animate'),
       (dom) => {
         var time = dom.dataset.time;
-        setTimeout(function () {
-          dom.classList.add(dom.dataset['animate']);
+        setTimeout(() => {
+          const { dataset = {} } = dom;
+          const { infinite, delay, duration, timing, direction } = dataset;
+          dom.classList.add(dataset.animate);
+          if (infinite){
+            dom.classList.add('infinite');
+          }
+          ['delay', 'duration', 'timing', 'direction', 'count'].forEach(key =>
+            animateCss(dom, key, dataset[key]));
           dom.classList.remove('hide');
         }, time);
     });
@@ -46,6 +75,9 @@ const fullpageConfig = {
 const forEach = [].forEach;
 const $wrapper = document.getElementsByClassName('page-inner')[0];
 // 首屏幕加载
-document.querySelector('.page-1').innerHTML = Tpls.page1 || Tpls.getTpl('page1') ;
-fullpageConfig.afterChange({ cur: 0 });
+const first = 1;
+const $first = document.querySelector(`.page-${first}`);
+$first.innerHTML = Tpls.getTpl(`page${first}`) ;
+$first.dataset.load = 1;
+fullpageConfig.afterChange({ cur: first });
 $wrapper.fullpage(fullpageConfig);

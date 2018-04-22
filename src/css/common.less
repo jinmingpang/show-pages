@@ -2,7 +2,6 @@
 html,body {
   font-family: Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,sans-serif;
 }
-
 ul{
   margin: 0px;
   padding: 0px;
@@ -111,6 +110,7 @@ li{
   position: relative;
   background-size: 1080px 1921px;
 }
+
 .bg-normal{
   .bg-base;
   background-size: 1080px 588px;
@@ -127,18 +127,24 @@ li{
   }
 }
 
+// .page{
+//   display: none;
+// }
+
 .page-4{
   .bg-base;
   background-image: url(../images/page-bg.jpg);
 }
-// .page-8{
-//   .bg-base;
-//   background-image: url(../images/bg-no-thing.jpg);
-// }
-// .page-18{
-//   .bg-base;
-//   background-image: url(../images/bg-no-thing.jpg);
-// }
+
+.page-8{
+  .bg-base;
+  background-image: url(../images/bg-page-8.jpg);
+}
+
+.page-18{
+  .bg-base;
+  background-image: url(../images/bg-no-thing.jpg);
+}
 
 .page:not(.cus-bg){ .bg-normal; }
 
@@ -156,6 +162,7 @@ li{
   width: 100%;
   height: 100%;;
 }
+
 .bg(@name, @width, @heigt, @top: -1, @left: -1, @bottom: -1, @right: -1) {
   & when not (@name = -1) {
     background-image: url("../images/@{name}");
@@ -192,67 +199,23 @@ li{
   }
 }
 
-.page-7{
-  .bg-base;
-  background-image: url('../images/7.jpg');
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.page-7{
-  .bg-base;
-  background-image: url('../images/7.jpg');
+@keyframes rotate-s {
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
-.page-8{
-  .bg-base;
-  background-image: url('../images/8.jpg');
+.rotate {
+  animation: rotate 2s infinite linear;
 }
 
-.page-9{
-  .bg-base;
-  background-image: url('../images/9.jpg');
-}
-
-.page-10{
-  .bg-base;
-  background-image: url('../images/10.jpg');
-}
-
-.page-11{
-  .bg-base;
-  background-image: url('../images/11.jpg');
-}
-
-.page-12{
-  .bg-base;
-  background-image: url('../images/12.jpg');
-}
-
-.page-13{
-  .bg-base;
-  background-image: url('../images/13.jpg');
-}
-
-.page-14{
-  .bg-base;
-  background-image: url('../images/14.jpg');
-}
-
-.page-15{
-  .bg-base;
-  background-image: url('../images/15.jpg');
-}
-
-.page-16{
-  .bg-base;
-  background-image: url('../images/16.jpg');
-}
-
-.page-17{
-  .bg-base;
-  background-image: url('../images/15.jpg');
-}
-
-.page-18{
-  .bg-base;
-  background-image: url('../images/15.jpg');
+.rotate-s {
+  animation: rotate-s 2s infinite linear;
 }

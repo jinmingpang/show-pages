@@ -2,7 +2,7 @@
 @import './page.less';
 
 .w-{
-  &yun-xing{ .bg('yun-xing.png', 147, 112); }
+  &yun-xing{ .bg('yun-xing-da.png', 147, 112); }
   &xing-shuang{ .bg('xiang-shuang.png', 95, 70); }
   &yun-chui{ .bg('yun-chui.png', 131, 102); }
   &wang-yuan-jing{ .bg('wang-yuan-jing.png', 101, 78); }
@@ -12,7 +12,7 @@
   &dian-nao{ .bg('dian-nao.png', 297, 238); }
   &fei-ji-right{ .bg('fei-ji-right.png', 140, 55); }
   &xing-xiao{ .bg('xing-xiao.png', 133, 130); }
-  &fang-da-jing{ .bg('text-yang-guang.png', 102, 84); }
+  &fang-da-jing{ .bg('fang-da-jing.png', 102, 84); }
   &tian-wen-jing{ .bg('tian-wen-jing.png', 189, 267); }
   &bi-fei-ren{ .bg('bi-fei-ren.png', 246, 184); }
   &dna-fenzi{ .bg('dna-fenzi.png', 171, 104); }
@@ -39,6 +39,7 @@
   &xiao-nan-hai{ .bg('xiao-nan-hai.png', 99, 164); }
   &xiao-nv-hai{ .bg('xiao-nv-hai.png', 171, 169); }
   &xian-kuang{ .bg('xian-kuang.png', 911, 815); }
+  &mao-er-board{ .bg('mao-er-board.png', 796, 480); }
 
   &xiao-xiong{ .bg('xiao-xiong.png', 118, 83); }
   &bi-xin{ .bg('bi-xin.png', 72, 68); }
@@ -48,11 +49,11 @@
   &left-bar{ .bg('left-bar.png', 77, 303); }
   &right-bar{ .bg('right-bar.png', 77, 434); }
 
-  &yun-que{ .bg('yun-que.png', 77, 434); }
+  &yun-que{ .bg('yun-que.png', 192, 70); }
 
   &jiang-bei-ren{ .bg('jiang-bei-ren.png', 159, 163); }
-  &x-zhou-1{ .bg('x-zhou-1.png', 258, 129); }
-  &up-right-arrow-1{ .bg('up-right-arrow-1.png', 932, 29); }
+  &x-zhou-1{ .bg('x-zhou-1.png', 932, 29); }
+  &up-right-arrow-1{ .bg('up-right-arrow-1.png', 258, 129); }
   &left-bar-1{ .bg('left-bar-1.png', 42, 308); }
   &right-bar-1{ .bg('right-bar-1.png',46, 331); }
   &fen-zi{ .bg('fen-zi.png', 92, 108); }
@@ -64,7 +65,7 @@
   &xiao-huo-che{ .bg('xiao-huo-che.png', 198, 92); }
   &xiao-fei-ji{ .bg('xiao-fei-ji.png', 160, 121); }
   &wan-shua{ .bg('wan-shua.png', 170, 148); }
-  &shu-ben{ .bg('shu-ben.png', 170, 148); }
+  &shu-ben{ .bg('shu-ben.png', 101, 77); }
   &nai-fen{ .bg('nai-fen.png', 147, 143); }
 
   &sha-bao{ .bg('sha-bao.png', 1080, 227); }
@@ -73,7 +74,7 @@
   &xiao-yun{ .bg('xiao-yun.png', 78, 29); }
 
   &yun-yang{ .bg('yun-yang.png', 159, 79); }
-  &hai-zi-wang{ .bg('hai-zi-wang.jpg', 336, 90); }
+  &hai-zi-wang{ .bg('hai-zi-wang.png', 336, 90); }
 
   &lun-qi-jian-dian{ .bg('lun-qi-jian-dian.png', 252, 242); }
   &lun-tian-mao{ .bg('lun-tian-mao.png', 238, 232); }
@@ -84,7 +85,7 @@
 
 .page-{
   &1{
-    .w-yun-chui { .pos(-1, 138, 495); z-index: 3;}
+    .w-yun-chui { .pos(-1, 138, 350); z-index: 3;}
     .w-xing-shuang { .pos(945, 115); }
     .w-wang-yuan-jing{ .pos(369, 209); }
     .w-yun-xing { .pos(264, 795); }
@@ -99,11 +100,10 @@
     .w-xing-xiao{ .pos(117, 886); }
     .w-fang-da-jing{ .pos(276, 675); }
     .w-dna-fenzi{ .pos(855, 155); }
-    .w-bi-fei-ren{ .pos(-1, 87, 100); }
-    .w-tian-wen-jing{ .pos(-1, 772, 60); }
+    .w-bi-fei-ren{ .pos(-1, 87, 40); }
+    .w-tian-wen-jing{ .pos(-1, 772, 20); }
     .w-dian-nao{ .pos(822, 400); }
 
-    .line-mulit{ .bg('line-mulit.png', 743, 125, 1055, 'center'); }
     .line-mulit-shu{ .bg('line-mulit-shu.png', 790, 67, 1335, 134); }
     .line-mulit-s{ .bg('line-mulit-s.png', 743, 125, 1055, 'center'); }
     .ren-nan-s{ .bg('ren-nan-s.png', 107, 122); }
@@ -129,11 +129,11 @@
   &4{
     .w-yun-xing{ .pos(728, 791); z-index: 3;}
     .w-yan-hua{ .pos(705, 121); z-index: 3; }
-    .tan-suo-bao-guang{ .bg('tan-suo-bao-guang.png', 282, 50, 753, 'center'); }
+    .tan-suo-bao-guang{ .bg('tan-suo-bao-guang.png', 282, 50, 793, 'center'); z-index: 3; }
     .popu-borad{ .bg('popu-borad.png', 965, 645, 618, 'center'); }
-    .w-100{ .bg('w-100.png', 421, 175, 830, 'center'); }
-    .xian-shang-bao-guang{ .bg('xian-shang-bao-guang.png', 659, 85, 1048, 'center'); }
-    .yi-word{ .bg('yi-word.png', 58, 56, 948, 757); }
+    .w-100{ .bg('w-100.png', 421, 175, 880, 'center'); }
+    .xian-shang-bao-guang{ .bg('xian-shang-bao-guang.png', 659, 85, 1088, 'center'); z-index: 3; }
+    .yi-word{ .bg('yi-word.png', 58, 56, 998, 757); }
 
   }
   &5{
@@ -152,110 +152,195 @@
     .w-fang-da-jing{ .pos(282, 649); }
     .w-dna-fenzi{ .pos(418, 87); }
     .w-fei-ji-right{ .pos(223, 58); }
-    .w-lu-biao{ .pos(-1, 34, 120); }
+    .w-lu-biao{ .pos(-1, 34, 30); }
     .yun-xing-da{ .bg('yun-xing-da.png', 181, 139, 92, 855); }
-    .up-down-arrow{ .pos(1222, 179); }
+    .w-up-down-arrow{ .pos(1227, 159); }
 
     .tan-suo-hu-dong{ .bg('tan-suo-hu-dong.png', 685, 75, 514, 'center'); }
     .board-ya-zi{ .bg('board-ya-zi.png', 929, 590, 638, 'center'); }
-    .san-ya-huo-dong{ .bg('san-ya-huo-dong.png', 345, 150, 880, 176); }
-    .di-er-zhang{ .bg('di-er-zhang.png', 251, 77, 285, 'center'); }
+    .san-ya-huo-dong{ .bg('san-ya-huo-dong.png', 345, 150, 880, 146); }
+    .di-er-zhang{ .bg('di-er-zhang.png', 251, 77, 291, 355 ); }
     .mu-zi{ .bg('mu-zi.png', 195, 193, 1474, 740); }
     .board-wan-shua{ .bg('board-wan-shua.png', 924, 484, 1250, 'center'); }
     .w-20{ .bg('w-20.png', 321, 232, 1337, 'center'); }
     .yi-jian-ling-xiu{ .bg('yi-jian-ling-xiu.png', 317, 48, 1585, 'center'); }
     .fu-hao-add{ .bg('fu-hao-add.png', 50, 49, 1331, 698); }
     .interest{ .bg('interest.png', 391, 102, 365, 'center'); }
-    .model{ .bg('model.png', 552, 561, 612, 460); }
+    .model{ .bg('model.png', 552, 561, 616, 435); }
   }
   &7{
-    .tan-suo-dong{ .bg('tan-suo-dong.png', 685, 75); }
-    .p-16789{ .bg('p-16789.png', 652, 171); }
-    .ti-yan-ying{ .bg('ti-yan-ying.png', 726, 751); }
-    .zhi-bo-guan-kan{ .bg('zhi-bo-guan-kan.png', 287, 52); }
+    .w-fei-ji-right{ .pos(223, 58); }
+    .w-yun-xing { .pos(79, 885); }
+    .w-xiao-nan-hai{ .pos(215, 716); }
+    .w-xiao-nv-hai{ .pos(-1, 43, 35); }
+    .w-xian-kuang{ .pos(-1, 88, 95); }
+    .w-huo-pao{ .bg(-1, 145, 131, 740, 865); transform: scaleX(-1); }
+
+    .w-mao-er-board{ .pos(300, 138); }
+    .tan-suo-dong{ .bg('tan-suo-dong.png', 291, 52, 185, 'center'); }
+    .p-16789{ .bg('p-16789.png', 652, 171, 445, 'center'); }
+    .ti-yan-ying{ .bg('ti-yan-ying.png', 726, 751, -1, 'center', 85); }
+    .zhi-bo-guan-kan{ .bg('zhi-bo-guan-kan.png', 287, 52, 670, 'center'); }
   }
   &8{
-    .tan-suo-hu-dong{ .bg('tan-suo-dong.png', 685, 75); }
-    .board-8{ .bg('board-8.png', 815, 476); }
-    .p-55{ .bg('p-55.png', 279, 543); }
-    .fen-si-zeng-zhang{ .bg('fen-si-zeng-zhang.png', 535, 42); }
-    .p-12345{ .bg('p-12345.png', 562, 136); }
+    .w-xiao-xiong{ .pos(761, 159); z-index: 3; }
+    .w-bi-xin{.pos(761, 756); z-index: 3;}
+    .w-wang-yuan-jing{ .pos(1070, 822); z-index: 3; transform: scale(0.6); }
+    .tan-suo-dong{ .bg('tan-suo-dong.png', 291, 52, 823, 'center'); z-index: 3; }
+    .board-8{ .bg('board-8.png', 815, 476, 694, 'center'); }
+    .p-55{ .bg('p-55.png', 279, 543, 146, 654); }
+    .fen-si-zeng-zhang{ .bg('fen-si-zeng-zhang.png', 535, 42, 1059, 'center'); }
+    .p-12345{ .bg('p-12345.png', 562, 136, 900, 'center'); }
   }
   &9{
-    .mao-er-board{ .bg('mao-er-board.png', 796, 480); }
-    .guo-qu-zeng-zhang{ .bg('guo-qu-zeng-zhang.png', 185, 22); }
-    .xiang-dang-yu-past{ .bg('xiang-dang-yu-past.png', 538, 71); }
-    .huo-dong-zeng-zhang{ .bg('huo-dong-zeng-zhang.png', 232, 22); }
-    .ji-lei-fen-liang{ .bg('ji-lei-fen-liang.png', 542, 72); }
-    .ji-lei-fen-liang{ .bg('ji-lei-fen-liang.png', 542, 72); }
-    .p-200-t{ .bg('p-200-t.png', 610, 253); }
+    .w-fei-ji-right{ .pos(223, 58); }
+    .w-yun-xing { .pos(79, 885); }
+    .w-re-qi-qiu{ .pos(382, 166); }
+    .w-wang-yuan-jing{ .pos(334, 855); }
+    .w-huo-pao{ .pos(1521, 841 ); transform: scaleX(-1); }
+    .w-xiao-nv-hai{ .pos(-1, 43, 110); }
+    .w-x-zhou{.pos(828, 147);}
+    .w-up-right-arrow{.pos(510, 442);}
+    .w-left-bar{.pos(544, 342);}
+    .w-right-bar{.pos(414, 687);}
+
+    .guo-qu-zeng-zhang{ .bg('guo-qu-zeng-zhang.png', 185, 22, 871, 616); }
+    .huo-dong-zeng-zhang{ .bg('huo-dong-zeng-zhang.png', 232, 22, 867, 286); }
+    .xiang-dang-yu-past{ .bg('xiang-dang-yu-past.png', 538, 71, 1046, 'center'); }
+    .ji-lei-fen-liang{ .bg('ji-lei-fen-liang.png', 542, 72, 1439, 'center'); }
+    .p-200-t{ .bg('p-200-t.png', 610, 253, 1145, 'center'); }
   }
   &10{
-    .jin-ci-yu{ .bg('jin-ci-yu.png', 331, 77); }
-    .p-2{ .bg('p-2.png', 347, 534); }
-    .pucharse{ .bg('pucharse.png', 512, 112); }
-    .quan-nian-top2{ .bg('quan-nian-top2.png', 829, 144); }
-    .di-san-zhang{ .bg('di-san-zhang.png', 251, 77); }
-    .tan-suo-gao-xiao{ .bg('tan-suo-gao-xiao.png', 685, 77); }
+    .w-fei-ji-right{ .pos(206, 56); }
+    .w-xing-xiao{ .pos(117, 891); }
+    .w-fang-da-jing{ .pos(276, 675); }
+    .w-da-mu-zhi{ .pos(693, 240); }
+    .w-yun-que{ .pos(666, 729); }
+    .w-bi-fei-ren{ .pos(-1, 87, 60); }
+    .w-tian-wen-jing{ .pos(-1, 772, 20); }
+
+    .di-san-zhang{ .bg('di-san-zhang.png', 251, 77, 312, 368); }
+    .pucharse{ .bg('pucharse.png', 512, 112, 358, 'center'); }
+    .tan-suo-gao-xiao{ .bg('tan-suo-gao-xiao.png', 685, 77, 532, 'center'); }
+    .p-2{ .bg('p-2.png', 347, 534, 686, 'center'); }
+    .quan-nian-top2{ .bg('quan-nian-top2.png', 829, 144, -1, 'center', 260); }
   }
   &11{
-    .xiang-dang-yu{ .bg('xiang-dang-yu.png', 467, 52); }
-    .jin-ci-yu{ .bg('jin-ci-yu.png', 331, 77); }
-    .p-234{ .bg('p-234.png', 526, 200); }
-    .text-ri-chang{ .bg('text-ri-chang.png', 144, 35); }
-    .chao-ji-xiao-liang{ .bg('chao-ji-xiao-liang.png', 263, 35); }
+    .w-fei-ji-right{ .pos(206, 56); transform: scale(0.8); }
+    .w-yun-xing{ .pos(154, 852); }
+    .w-jiang-bei-ren{ .pos(578, 835); }
+    .w-x-zhou-1{ .pos(-1, 66, 500); }
+    .w-up-right-arrow-1{ .pos(-1, 393, 620); }
+    .w-left-bar-1{ .pos(-1, 300, 510); }
+    .w-right-bar-1{ .pos(-1, 700, 510); }
+    .w-fen-zi{ .pos(828, 67); }
+
+    .gao-xiao-liang{ .bg('gao-xiao-liang.png', 290, 53, 176, 'center'); }
+    .xiang-dang-yu{ .bg('xiang-dang-yu.png', 467, 52, 380, 'center'); }
+    .p-234{ .bg('p-234.png', 526, 200, 501, 'center'); }
+    .jin-ci-yu{ .bg('jin-ci-yu.png', 331, 77, 763, 'center'); }
+    .text-ri-chang{ .bg('text-ri-chang.png', 144, 35, -1, 256, 450); }
+    .chao-ji-xiao-liang{ .bg('chao-ji-xiao-liang.png', 263, 35, -1, 588, 450); }
+    .shan-fang-lu{ .bg('shan-fang-lu.png', 1081, 433, -1, 0, 0); }
   }
   &12{
-    .gao-xiao-liang{ .bg('gao-xiao-liang.png', 290, 53); }
-    .xiao-lan-he{ .bg('xiao-lan-he.png', 840, 155); }
-    .nai-fen-li-wu{ .bg('nai-fen-li-wu.png', 716, 454); }
-    .eight-hour{ .bg('eight-hour.png', 567, 564); }
+    .w-fei-ji-right{ .pos(206, 56); transform: scale(0.8); }
+    .w-li-wu{ .pos(74, 815); }
+    .w-dna-xuan{ .pos(933, 69); }
+    .w-huo-pao{ .pos(1099, 786); transform: scaleX(-1); }
+    .w-xiao-nan-hai{ .pos(-1, 866, 148); }
+
+    .gao-xiao-liang{ .bg('gao-xiao-liang.png', 290, 53, 170 ,'center'); }
+    .xiao-lan-he{ .bg('xiao-lan-he.png', 840, 155, 461, 116); }
+    .eight-hour{ .bg('eight-hour.png', 567, 564, 671, 'center'); }
+    .nai-fen-li-wu{ .bg('nai-fen-li-wu.png', 716, 454, 1183, 122); z-index: 3; }
   }
   &13{
-    .di-wu-zhang{ .bg('di-wu-zhang.png', 251, 77); }
-    .loyalty{ .bg('loyalty.png', 761, 80); }
-    .tan-kou-bei{ .bg('tan-kou-bei.png', 685, 79); }
-    .san-ya-culb{ .bg('san-ya-culb.png', 773, 298); }
-    .san-ya{ .bg('san-ya.jpg', 729, 485); }
-    .kuang-san-ya{ .bg('kuang-san-ya.png', 762, 559); }
+    .w-fei-ji-right{ .pos(206, 56); }
+    .w-xing-xiao{ .pos(117, 886); }
+    .w-fang-da-jing{ .pos(276, 675); }
+    .w-left-arrow{ .pos(1269, 74); }
+    .w-right-arrow{ .pos(1280, 950); }
+
+    .di-wu-zhang{ .bg('di-wu-zhang.png', 251, 77, 308, 329); }
+    .loyalty{ .bg('loyalty.png', 761, 80, 407, 'center'); }
+    .tan-kou-bei{ .bg('tan-kou-bei.png', 685, 79, 503, 'center'); }
+    .san-ya-culb{ .bg('san-ya-culb.png', 773, 298, 644, 'center'); }
+    .kuang-san-ya{ .bg('kuang-san-ya.png', 762, 559, 1035, 'center'); }
+    .san-ya{ .bg('san-ya.jpg', 729, 485, 1069, 'center'); }
+    .di-ifer{ .bg('di-ifer.png', 1080, 550, -1, 0, 0); }
   }
   &14{
-    .you-zhi-kou-bei{ .bg('you-zhi-kou-bei.png', 596, 90); }
-    .yu-du-hu-dong{ .bg('yu-du-hu-dong.png', 782, 78); }
-    .w-200{ .bg('w-200.png', 649, 175); }
-    .bai-ban-p-200{ .bg('bai-ban-p-200.png', 903, 589); }
-    .nan-nv-group{ .bg('nan-nv-group.png', 445, 314); }
-    .hu-dong-liang{ .bg('hu-dong-liang.png', 362, 370); }
-    .tan-suo-kou-bei{ .bg('tan-suo-kou-bei.png', 295, 53); }
+    .w-yun-xing { .pos(131, 835); }
+    .w-jiang-bei{ .pos(410, 109); z-index: 3; }
+    .w-yun-chui { .pos(-1, 40, 650); transform: scale(0.6); }
+    .w-shu-ben{ .pos(-1, 514, 600); }
+    .w-nai-fen{ .pos(-1, -1, 550, 73); }
+    .w-xiao-huo-che{ .pos(-1, 172, 54); }
+    .w-xiao-fei-ji{ .pos(-1, 170, 150); transform: scale(0.8); }
+    .w-wan-shua{ .pos(-1, 805, 55); }
+    .w-xiao-nan-hai{ .pos(-1, 43, 55); transform: scaleX(-1); }
+    .w-yan-hua{ .pos(820, 834); z-index: 3; }
+    .w-xiao-huo-pao{ .pos(-1, 680, 35); transform: scale(0.7); }
+
+    .tan-suo-kou-bei{ .bg('tan-suo-kou-bei.png', 295, 53, 176, 'center'); }
+    .bai-ban-p-200{ .bg('bai-ban-p-200.png', 903, 589, 384, 'center'); }
+    .you-zhi-kou-bei{ .bg('you-zhi-kou-bei.png', 596, 90, 476, 'center'); }
+    .yu-du-hu-dong{ .bg('yu-du-hu-dong.png', 782, 78, 612, 'center'); }
+    .w-200{ .bg('w-200.png', 649, 175, 717, 'center'); }
+    .nan-nv-group{ .bg('nan-nv-group.png', 445, 314, -1, 100, 220); }
+    .hu-dong-liang{ .bg('hu-dong-liang.png', 362, 370, -1, 595, 220); }
   }
   &15{
-    .di-wu-zhang{ .bg('di-wu-zhang.png', 251, 77); }
-    .summary{ .bg('summary.png', 566, 188); }
-    .tong-bi-zeng-zhang{ .bg('tong-bi-zeng-zhang.png', 677, 69); }
-    .p-89{ .bg('p-89.png', 514, 215); }
-    .top-left-down{ .bg('top-left-down.png', 485, 231); }
-    .bottom-right-up{ .bg('bottom-right-up.png', 485, 238); }
+    .w-fei-ji-right{ .pos(206, 56); }
+    .w-xing-xiao{ .pos(117, 886); }
+    .w-fang-da-jing{ .pos(276, 675); }
+    .w-huo-pao{ .pos(856, 806); transform: scale(0.8) scaleX(-1); }
+    .w-lun-xin-lin-shou{ .bg(-1, 423, 400, 1048, 126);  }
+    .w-lun-tian-mao{ .bg(-1, 423, 400, 1048, 534);  }
+
+    .di-wu-zhang{ .bg('di-wu-zhang.png', 251, 77, 321, 325); }
+    .summary{ .bg('summary.png', 566, 118, 383, 'center'); }
+    .tong-bi-zeng-zhang{ .bg('tong-bi-zeng-zhang.png', 963, 69, 519, 'center'); }
+    .p-89{ .bg('p-89.png', 514, 215, 635, 'center'); }
+    .top-left-down{ .bg('top-left-down.png', 485, 231, 1021, 90); }
+    .bottom-right-up{ .bg('bottom-right-up.png', 485, 238, 1234, 535); }
+    .sha-bao{ .bg('sha-bao.png', 1080, 227, -1, 0, 0); }
   }
   &16{
-    .tian-mao-chao-shi{ .bg('tian-mao-chao-shi.png', 760, 406); }
-    .shu-ju-fen-xi{ .bg('shu-ju-fen-xi.png', 265, 82); }
-    .xiao-liang-zeng-zhang{ .bg('xiao-liang-zeng-zhang.png', 850, 159); }
-    .circle-tu{ .bg('circle-tu.png', 487, 438); }
-    .xin-ke-zeng-zhang{ .bg('xin-ke-zeng-zhang.png', 146, 112); }
-    .xiao-liang-zeng-su{ .bg('xiao-liang-zeng-su.png', 146, 113); }
-    .mao-chao-zeng-zhang{ .bg('mao-chao-zeng-zhang.png', 211, 120); }
+    .w-xue-xi{  .pos(-1, 742, 20); }
+    .w-xiao-yun{.pos(226, 857);  }
+    .w-xiao-fei-ji{ .pos(1089, 722); }
+    .w-fen-zi{ .pos(567, 681); }
+
+    .tian-mao-chao-shi{ .bg('tian-mao-chao-shi.png', 881, 135, 367, 'center'); }
+    .circle-tu{ .bg('circle-tu.png', 487, 438, 672, 340); }
+    .shu-ju-fen-xi{ .bg('shu-ju-fen-xi.png', 265, 82, 1260, 381); }
+    .xin-ke-zeng-zhang{ .bg('xin-ke-zeng-zhang.png', 146, 112, 635, 148); }
+    .mao-chao-zeng-zhang{ .bg('mao-chao-zeng-zhang.png', 211, 120, 774, 830); }
+    .xiao-liang-zeng-su{ .bg('xiao-liang-zeng-su.png', 146, 113, 1044, 138); }
+    .xiao-liang-zeng-zhang{ .bg('xiao-liang-zeng-zhang.png', 850, 159, 1388, 'center'); }
 
   }
   &17{
-    .xuan-zhuan-arrow{ .bg('xuan-zhuan-arrow.png', 559, 537); }
-    .arrow-circle{ .bg('arrow-circle.png', 188, 96); }
-    .di-tu{ .bg('di-tu.png', 442, 335); }
-    .kuai-tu{ .bg('kuai-tu.png', 477, 438); }
-    .dian-tu{ .bg('dian-tu.png', 737, 354); }
-    .da-neng-ji-tuan{ .bg('da-neng-ji-tuan.png', 582, 49); }
-    .cheng-11{ .bg('cheng-11.png', 760, 406); }
+    .w-re-qi-qiu{ .pos(635, 77); }
+    .w-yun-yang{ .pos(390, 739); }
+    .w-fei-ji-right{ .pos(734, 798); transform: scale(0.8); }
+    .w-lun-qi-jian-dian{ .pos(767, 424); }
+    .w-lun-xin-lin-shou{ .pos(980, 290); }
+    .w-lun-tian-mao{ .pos(986, 537); }
+    .w-hai-zi-wang{ .pos(-1, 94, 350); }
+    .w-huo-pao{ .pos(-1, 93, 450); transform: scale(0.8); }
+
+    .da-neng-ji-tuan{ .bg('da-neng-ji-tuan.png', 582, 49, 200, 'center'); }
+    .cheng-11{ .bg('cheng-11.png', 760, 406, 257, 'center'); }
+    .xuan-zhuan-arrow{ .bg('xuan-zhuan-arrow.png', 559, 537, 721, 'center'); }
+    .arrow-circle{ .bg('arrow-circle.png', 188, 96, -1, 355, 190); z-index: 3; }
+    .di-tu{ .bg('di-tu.png', 442, 335, -1, 47, 20); }
+    .kuai-tu{ .bg('kuai-tu.png', 477, 438, -1, 516, 42); }
+    .dian-tu{ .bg('dian-tu.png', 737, 354, -1, 285, 75); }
   }
   &18{
-    .wei-lai{ .bg('wei-lai.png',564, 310, 247, 635); }
+    .wei-lai-text{ .bg('wei-lai-text.png', 564, 240, 535, 'center'); }
   }
 }

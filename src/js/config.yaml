@@ -2,27 +2,31 @@ page1:
   items:
     w-yun-chui:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInLeft
+        time: 1000
     w-xing-shuang:
       data:
-        animate: swing
-        time: 500
+        animate: flash
+        infinite: true
+        duration: 4s
+        time: 1000
     w-wang-yuan-jing:
       data:
         animate: tada
         time: 500
     w-yun-xing:
       data:
-        animate: wobble
+        animate: slideInRight
         time: 500
     w-qi-qiu:
       data:
-        animate: jello
-        time: 500
+        animate: slideInDown
+        time: 2000
     w-text-yang-guang:
       data:
-        animate: bounceIn
+        animate: flash
+        duration: 6s
+        infinite: true
         time: 500
     shan-fang-lu:
       data:
@@ -30,211 +34,213 @@ page1:
         time: 500
     tan-suo-yu-zhou:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInUp
+        time: 800
     chao-ji-jie-bao:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInUp
+        time: 1500
 page2:
+  xiaoRenTime: 4000
   items:
     w-fei-ji-right:
       data:
-        animate: flip
+        animate: slideInLeft
         time: 500
     w-xing-xiao:
       data:
-        animate: bounceIn
+        animate: swing
         time: 500
+        infinite : true
     w-fang-da-jing:
       data:
         animate: fadeIn
         time: 500
     w-tian-wen-jing:
       data:
-        animate: fadeIn
-        time: 500
+        animate: bounceIn
+        time: 2000
     w-bi-fei-ren:
       data:
-        animate: fadeIn
-        time: 500
+        animate: lightSpeedIn
+        time: 2000
     w-dna-fenzi:
       data:
-        animate: fadeIn
-        time: 500
+        animate: rotateIn
+        time: 2200
     w-dian-nao:
       data:
         animate: fadeIn
-        time: 500
+        time: 2200
 
-    line-mulit:
-      data:
-        animate: fadeIn
-        time: 500
     line-mulit-shu:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInDown
+        time: 7000
+        duration: 500ms
     line-mulit-s:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInUp
+        time: 2200
+        duration: 1s
     di-yi-zhang:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInUp
+        time: 800
     awar-text:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInUp
+        time: 1200
     da-bao-guang:
       data:
-        animate: fadeIn
-        time: 500
+        animate: bounceIn
+        time: 1800
     shu-ju-zhong-xin:
       data:
         animate: fadeIn
-        time: 500
+        time: 2000
 page3:
   items:
     w-fei-ji-right:
       data:
-        animate: fadeIn
+        animate: fadeInLeft
         time: 500
     w-yun-xing:
       data:
-        animate: fadeIn
+        animate: fadeInRight
         time: 500
     w-deng-pao:
       data:
-        animate: fadeIn
+        animate: flash
         time: 500
+        duration: 4s
+        infinite : true
     w-left-arrow:
       data:
-        animate: fadeIn
-        time: 500
+        animate: fadeInRight
+        time: 2500
     w-right-arrow:
       data:
-        animate: fadeIn
-        time: 500
+        animate: fadeInLeft
+        time: 2500
     w-huo-pao:
       data:
-        animate: fadeIn
+        animate: bounceInRight
         time: 500
     w-dian-shi:
       data:
-        animate: fadeIn
+        animate: slideInRight
         time: 500
 
     wu-da-mei-ti:
       data:
-        animate: fadeIn
-        time: 500
+        animate: zoomIn
+        time: 1200
     shou-ji-ke:
       data:
         animate: fadeIn
-        time: 500
+        time: 2000
     shou-ji-li:
       data:
         animate: fadeIn
-        time: 500
-
+        time: 2000
 page4:
   items:
     w-yun-xing:
       data:
-        animate: fadeIn
-        time: 500
+        animate: fadeInRight
+        time: 1400
     w-yan-hua:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInUp
+        time: 1200
     bg-mask:
       data:
         animate: fadeIn
         time: 500
     tan-suo-bao-guang:
       data:
-        animate: fadeIn
-        time: 500
-    popu-borad:
-      data:
-        animate: fadeIn
-        time: 500
-    w-100:
-      data:
-        animate: fadeIn
-        time: 500
+        animate: fadeInUp
+        time: 1600
     xian-shang-bao-guang:
       data:
-        animate: fadeIn
-        time: 500
+        animate: fadeInDown
+        time: 1600
+    popu-borad:
+      data:
+        animate: bounceInDown
+        time: 800
+        duration: 600ms
+    w-100:
+      data:
+        animate: bounceIn
+        time: 2500
     yi-word:
       data:
-        animate: fadeIn
-        time: 500
-
+        animate: lightSpeedIn
+        time: 3000
+        duration: 500ms
 page5:
   items:
     w-da-mu-zhi:
       data:
-        animate: fadeIn
-        time: 500
+        animate: pulse
+        time: 2000
+        infinite: true
     w-xiao-huo-pao:
       data:
-        animate: fadeIn
+        animate: fadeInLeft
         time: 500
     w-peng-you:
       data:
-        animate: fadeIn
+        animate: fadeInRight
         time: 500
     w-jiang-bei:
       data:
-        animate: fadeIn
-        time: 500
+        animate: bounceInUp
+        time: 1600
     w-huo-pao:
       data:
-        animate: fadeIn
-        time: 500
+        animate: bounceInRight
+        time: 3500
     w-xing-shuang:
       data:
-        animate: fadeIn
-        time: 500
+        animate: flash
+        infinite: true
+        time: 4500
+        duration: 6s
 
     tan-suo-bao-guang:
       data:
-        animate: fadeIn
+        animate: fadeInDown
         time: 500
     lei-ji-xin-zeng:
       data:
-        animate: fadeIn
-        time: 500
+        animate: bounceInUp
+        time: 1000
     maoer-board-chart:
       data:
-        animate: fadeIn
-        time: 500
-
+        animate: slideInUp
+        time: 2500
 page6:
   items:
     w-fang-da-jing:
       data:
-        animate: fadeIn
-        time: 500
+        animate: pulse
+        infinite: true
+        duration: 2s
+        time: 1200
     w-dna-fenzi:
       data:
-        animate: fadeIn
-        time: 500
+        animate: rotateIn
+        time: 2500
     w-fei-ji-right:
       data:
-        animate: fadeIn
-        time: 500
-    w-lu-biao:
-      data:
-        animate: fadeIn
+        animate: slideInLeft
         time: 500
     yun-xing-da:
       data:
-        animate: fadeIn
+        animate: slideInRight
         time: 500
     up-down-arrow:
       data:
@@ -244,48 +250,698 @@ page6:
     tan-suo-hu-dong:
       data:
         animate: fadeIn
-        time: 500
-    w-20:
-      data:
-        animate: fadeIn
-        time: 500
-    mu-zi:
-      data:
-        animate: fadeIn
-        time: 500
+        time: 2000
     di-er-zhang:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInUp
+        time: 1000
+
     yi-jian-ling-xiu:
       data:
-        animate: fadeIn
-        time: 500
+        animate: fadeInUp
+        time: 6000
+    mu-zi:
+      data:
+        animate: zooomIn
+        time: 6500
+    fu-hao-add:
+      data:
+        animate: tada
+        infinite: true
+        duration: 4s
+        time: 6500
+    w-20:
+      data:
+        animate: wobble
+        time: 6500
+    w-lu-biao:
+      data:
+        animate: flipInY
+        time: 6000
     board-wan-shua:
       data:
         animate: fadeIn
-        time: 500
+        time: 5500
+
     board-ya-zi:
       data:
         animate: fadeIn
-        time: 500
-    fu-hao-add:
-      data:
-        animate: fadeIn
-        time: 500
+        time: 3500
     interest:
       data:
         animate: fadeIn
-        time: 500
+        time: 1500
     model:
       data:
-        animate: fadeIn
-        time: 500
+        animate: slideInRight
+        time: 4500
     san-ya-huo-dong:
+      data:
+        animate: slideInLeft
+        time: 5000
+page7:
+  items:
+    w-fei-ji-right:
+      data:
+        animate: fadeInLeft
+        time: 2000
+        infinite: true
+        duration: 10s
+        delay: 1000
+        direction: alternate
+    w-yun-xing:
+      data:
+        animate: fadeInRight
+        time: 500
+    w-xiao-nan-hai:
+      data:
+        animate: fadeInUp
+        time: 1000
+    w-xiao-nv-hai:
+      data:
+        animate: pulse
+        time: 3500
+        infinite: true
+        duration: 5s
+        direction: alternate
+    w-xian-kuang:
+      data:
+        animate: zoomIn
+        time: 2800
+    w-huo-pao:
+      data:
+        animate: fadeIn
+        time: 2200
+    w-mao-er-board:
+      data:
+        animate: bounceInDown
+        time: 500
+    tan-suo-dong:
+      data:
+        animate: fadeInDown
+        time: 200
+    p-16789:
+      data:
+        animate: rubberBand
+        time: 2000
+    ti-yan-ying:
+      data:
+        animate: zoomIn
+        time: 2800
+    zhi-bo-guan-kan:
+      data:
+        animate: fadeIn
+        time: 1300
+page8:
+  items:
+    bg-mask:
       data:
         animate: fadeIn
         time: 500
+    w-xiao-xiong:
+      data:
+        animate: swing
+        time: 3000
+    tan-suo-dong:
+      data:
+        animate: slideInDown
+        time: 2400
+    w-bi-xin:
+      data:
+        animate: flash
+        infinite: true
+        time: 6000
+        duration: 6s
+    board-8:
+      data:
+        animate: bounceInDown
+        time: 1000
+        duration: 600
+    p-55:
+      data:
+        animate: slideInUp
+        time: 5000
+    fen-si-zeng-zhang:
+      data:
+        animate: fadeIn
+        time: 3000
+    p-12345:
+      data:
+        animate: rotateIn
+        time: 3500
+    w-wang-yuan-jing:
+      data:
+        animate: swing
+        time: 4000
+page9:
+  items:
+    w-fei-ji-right:
+      data:
+        animate: fadeInLeft
+        time: 1000
+    w-yun-xing:
+       data:
+        animate: slideInRight
+        time: 500
+    w-re-qi-qiu:
+      data:
+        animate: fadeOutUp
+        time: 500
+        infinite: true
+        duration: 10s
+        delay: 1000
+        direction: alternate
+    w-wang-yuan-jing:
+      data:
+        animate: zoomIn
+        time: 1000
+    w-huo-pao:
+      data:
+        animate: rotateIn
+        time: 500
+    w-xiao-nv-hai:
+      data:
+        animate: flipInY
+        time: 1000
+    w-x-zhou:
+      data:
+        animate: slideInLeft
+        time: 1200
+    w-up-right-arrow:
+      data:
+        animate: fadeInUp
+        time: 3000
+    w-left-bar:
+      data:
+        animate: flipInY
+        time: 2000
+    w-right-bar:
+      data:
+        animate: flipInY
+        time: 4000
+    huo-dong-zeng-zhang:
+      data:
+        animate: flipInY
+        time: 2500
+    guo-qu-zeng-zhang:
+      data:
+        animate: flipInY
+        time: 4500
+    xiang-dang-yu-past:
+      data:
+        animate: fadeInDown
+        time: 5000
+    ji-lei-fen-liang:
+      data:
+        animate: tada
+        time: 5500
+    p-200-t:
+      data:
+        animate: bounce
+        time: 6500
+page10:
+  items:
+    w-fei-ji-right:
+      data:
+        animate: slideInLeft
+        time: 500
+    w-xing-xiao:
+      data:
+        data:
+        animate: rotate
+        infinite: true
+        duration: 20s
+        time: 800
+    w-fang-da-jing:
+      data:
+        animate: rotateInUpRight
+        time: 2000
+    w-da-mu-zhi:
+       data:
+        animate: tada
+        infinite: true
+        duration: 4s
+        time: 6000
+    w-yun-que:
+      data:
+        animate: lightSpeedIn
+        time: 6000
+    w-bi-fei-ren:
+       data:
+        animate: rotateInDownLeft
+        time: 3000
+    w-tian-wen-jing:
+       data:
+        animate: rotateInDownRight
+        time: 3500
+
+    di-san-zhang:
+      data:
+        animate: fadeInUp
+        time: 800
+    pucharse:
+      data:
+        animate: fadeInUp
+        time: 1000
+    tan-suo-gao-xiao:
+      data:
+        animate: fadeInUp
+        time: 1200
+    p-2:
+      data:
+        animate: rubberBand
+        time: 5000
+    quan-nian-top2:
+      data:
+        animate: fadeInDown
+        time: 4000
+
+page11:
+  items:
+    w-fei-ji-right:
+      data:
+        animate: fadeInLeft
+        time: 2000
+        infinite: true
+        duration: 10s
+        delay: 1000
+        direction: alternate
+    w-yun-xing:
+      data:
+        animate: slideInRight
+        time: 500
+    w-jiang-bei-ren:
+      data:
+        animate: slideInLeft
+        time: 4000
+    w-x-zhou-1:
+      data:
+        animate: slideInLeft
+        time: 5000
+    w-up-right-arrow-1:
+      data:
+        animate: fadeInUp
+        time: 6200
+    w-left-bar-1:
+      data:
+        animate: flipInY
+        time: 5600
+    w-right-bar-1:
+      data:
+        animate: flipInY
+        time: 7000
+
+    w-fen-zi:
+      data:
+        animate: tada
+        infinite: true
+        duration: 4s
+        time: 1200
+
+    gao-xiao-liang:
+      data:
+        animate: fadeInUp
+        time: 500
+    shan-fang-lu:
+      data:
+        animate: fadeInUp
+        time: 2000
+    xiang-dang-yu:
+      data:
+          animate: slideInLeft
+          time: 1800
+    jin-ci-yu:
+      data:
+          animate: slideInRight
+          time: 2400
+    p-234:
+      data:
+          animate: rotateIn
+          time: 3400
+    text-ri-chang:
+      data:
+        animate: flipInY
+        time: 6600
+    chao-ji-xiao-liang:
+       data:
+        animate: flipInY
+        time: 7400
+
+page12:
+  items:
+    w-fei-ji-right:
+      data:
+        animate: slideInLeft
+        time: 500
+    w-li-wu:
+      data:
+        animate: slideInRight
+        time: 800
+    w-dna-xuan:
+      data:
+        animate: rotateIn
+        time: 1400
+    w-huo-pao:
+      data:
+        animate: zoomIn
+        time: 2800
+    w-xiao-nan-hai:
+      data:
+        animate: fadeInUp
+        time: 3200
+
+    gao-xiao-liang:
+      data:
+        animate: fadeInUp
+        time: 500
+    xiao-lan-he:
+      data:
+        animate: zoomIn
+        time: 1200
+    eight-hour:
+      data:
+        animate: flipInX
+        time: 1600
+    nai-fen-li-wu:
+       data:
+        animate: bounceInUp
+        time: 2000
+
+page13:
+  items:
+    w-fei-ji-right:
+      data:
+        animate: slideInLeft
+        time: 500
+    w-xing-xiao:
+      data:
+        animate: rotate
+        infinite: true
+        duration: 20s
+        time: 800
+    w-fang-da-jing:
+      data:
+        animate: tada
+        infinite: true
+        duration: 10s
+        time: 5000
+    w-left-arrow:
+      data:
+        animate: slideInRight
+        time: 4000
+    w-right-arrow:
+      data:
+        animate: slideInLeft
+        time: 4500
+
+    di-wu-zhang:
+      data:
+        animate: slideInUp
+        time: 1000
+    loyalty:
+      data:
+        animate: slideInUp
+        time: 1400
+    tan-kou-bei:
+       data:
+        animate: slideInUp
+        time: 1800
+    san-ya-culb:
+      data:
+        animate: zoomIn
+        time: 2400
+    kuang-san-ya:
+      data:
+        animate: rotateInDownRight
+        time: 2800
+    san-ya:
+      data:
+        animate: rotateInDownLeft
+        time: 3400
+    di-ifer:
+       data:
+        animate: fadeInUp
+        time: 2000
+
+page14:
+  items:
+    w-yun-xing:
+      data:
+        animate: bounceInDown
+        time: 500
+    w-jiang-bei:
+      data:
+        animate: swing
+        time: 5000
+    w-yan-hua:
+      data:
+        animate: zoomIn
+        time: 5000
+    w-yun-chui:
+      data:
+        animate: rotateInDownLeft
+        time: 5000
+        duration: 2s
+    w-shu-ben:
+      data:
+        animate: rotateInUpLeft
+        time: 5200
+        duration: 2s
+    w-nai-fen:
+      data:
+        animate: rotateInUpRight
+        time: 5400
+        duration: 2s
+    w-xiao-huo-che:
+      data:
+        animate: slideInUp
+        time: 2000
+    w-xiao-fei-ji:
+      data:
+        animate: slideInDown
+        time: 2400
+    w-wan-shua:
+      data:
+        animate: slideInUp
+        time: 2800
+    w-xiao-nan-hai:
+      data:
+        animate: slideInUp
+        time: 3200
+    w-xiao-huo-pao:
+      data:
+        animate: slideInUp
+        time: 3600
+
+    tan-suo-kou-bei:
+    bai-ban-p-200:
+      data:
+        animate: rotateIn
+        time: 1000
+    you-zhi-kou-bei:
+      data:
+        animate: slideInDown
+        time: 1800
+    yu-du-hu-dong:
+      data:
+        animate: slideInDown
+        time: 2800
+    w-200:
+      data:
+        animate: rotateIn
+        time: 4000
+    nan-nv-group:
+      data:
+        animate: zoomIn
+        time: 5600
+    hu-dong-liang:
+      data:
+        animate: rotateIn
+        time: 6000
+
+page15:
+  items:
+    w-fei-ji-right:
+      data:
+        animate: slideInLeft
+        time: 500
+    w-xing-xiao:
+      data:
+        animate: slideInDown
+        time: 800
+    w-fang-da-jing:
+      data:
+        animate: rotateIn
+        time: 1000
+    w-huo-pao:
+      data:
+        animate: zoomIn
+        time: 4200
+    w-lun-xin-lin-shou:
+      data:
+        animate: rotateIn
+        duration: 30s
+        time: 2500
+    w-lun-tian-mao:
+      data:
+        animate: rotateIn
+        duration: 30s
+        time: 3000
+
+    di-wu-zhang:
+      data:
+        animate: slideInUp
+        time: 1000
+    summary:
+      data:
+        animate: slideInUp
+        time: 1200
+    tong-bi-zeng-zhang:
+      data:
+        animate: bounceIn
+        time: 1600
+    p-89:
+      data:
+        animate: flipInY
+        time: 2400
+    top-left-down:
+      data:
+        animate: bounceInLeft
+        time: 3000
+    bottom-right-up:
+      data:
+        animate: bounceInRight
+        time: 3800
+    sha-bao:
+      data:
+        animate: slideInUp
+        time: 2000
+
+page16:
+  items:
+    w-xue-xi:
+      data:
+        animate: zoomIn
+        time: 2000
+    w-xiao-yun:
+    w-xiao-fei-ji:
+      data:
+        animate: bounceInLeft
+        time: 6500
+    w-fen-zi:
+      data:
+        animate: tada
+        infinite: true
+        duration: 4s
+        time: 4200
+    tian-mao-chao-shi:
+      data:
+        animate: zoomIn
+        time: 500
+    circle-tu:
+      data:
+        animate: bounceIn
+        time: 1200
+    mao-chao-zeng-zhang:
+      data:
+        animate: flash
+        time: 3600
+    xin-ke-zeng-zhang:
+      data:
+        animate: flash
+        time: 1800
+    xiao-liang-zeng-su:
+      data:
+        animate: flash
+        time: 2800
+    xiao-liang-zeng-zhang:
+      data:
+        animate: fadeInDown
+        time: 5000
+    shu-ju-fen-xi:
+      data:
+        animate: slideInDown
+        time: 5800
+
+page17:
+  items:
+    w-re-qi-qiu:
+      data:
+        animate: fadeOutUp
+        time: 500
+        infinite: true
+        duration: 10s
+        delay: 1000
+    w-yun-yang:
+      data:
+        animate: fadeInRight
+        time: 1400
+    w-fei-ji-right:
+       data:
+        animate: fadeOutRight
+        time: 4000
+        infinite: true
+        duration: 10s
+        delay: 2000
+    w-lun-qi-jian-dian:
+      data:
+        animate: rotateIn
+        duration: 10s
+        time: 2200
+    w-lun-xin-lin-shou:
+      data:
+        animate: rotateIn
+        duration: 10s
+        time: 2800
+    w-lun-tian-mao:
+      data:
+        animate: rotateIn
+        duration: 10s
+        time: 3600
+    w-hai-zi-wang:
+      data:
+        animate: slideInDown
+        time: 3200
+    w-huo-pao:
+      data:
+        animate: zoomIn
+        time: 2800
+
+    da-neng-ji-tuan:
+      data:
+        animate: slideInUp
+        time: 500
+    cheng-11:
+      data:
+        animate: zoomIn
+        time: 1000
+    xuan-zhuan-arrow:
+      data:
+        animate: fadeIn
+        time: 4000
+    arrow-circle:
+      data:
+        animate: fadeIn
+        time: 4600
+    di-tu:
+      data:
+        animate: zoomIn
+        time: 4000
+    kuai-tu:
+      data:
+        animate: zoomIn
+        time: 5200
+    dian-tu:
+      data:
+        animate: fadeInDown
+        time: 6000
 
 page18:
+  fzTime: 1000
   items:
-    wei-lai:
+    wei-lai-text:
+      data:
+        animate: pulse
+        inifnite: true
+        duration: 4s
+        time: 2400
