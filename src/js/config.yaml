@@ -1,4 +1,15 @@
 page1:
+  # scrollnums:
+  #   200:
+  #     type: test
+  #     time: 1000
+  #     val: 200
+  #     duration: 2000
+  #   40000:
+  #     type: test
+  #     val: 12345
+  #     duration: 2000
+  #     time: 1000
   items:
     w-yun-chui:
       data:
@@ -429,24 +440,21 @@ page9:
         time: 1200
     w-up-right-arrow:
       data:
-        animate: fadeInUp
-        time: 3000
+        time: 3800
     w-left-bar:
       data:
-        animate: flipInY
-        time: 2000
+        time: 2800
     w-right-bar:
       data:
-        animate: flipInY
-        time: 4000
+        time: 4400
     huo-dong-zeng-zhang:
       data:
         animate: flipInY
-        time: 2500
+        time: 2000
     guo-qu-zeng-zhang:
       data:
         animate: flipInY
-        time: 4500
+        time: 3500
     xiang-dang-yu-past:
       data:
         animate: fadeInDown
@@ -540,16 +548,13 @@ page11:
         time: 5000
     w-up-right-arrow-1:
       data:
-        animate: fadeInUp
-        time: 6200
+        time: 7500
     w-left-bar-1:
       data:
-        animate: flipInY
-        time: 5600
+        time: 6500
     w-right-bar-1:
       data:
-        animate: flipInY
-        time: 7000
+        time: 8500
 
     w-fen-zi:
       data:
@@ -581,7 +586,7 @@ page11:
     text-ri-chang:
       data:
         animate: flipInY
-        time: 6600
+        time: 5500
     chao-ji-xiao-liang:
        data:
         animate: flipInY

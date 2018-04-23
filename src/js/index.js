@@ -15,7 +15,6 @@ const animateCss = (dom, key, val) => {
   } else if (key === 'count') {
     key = 'iteration-count	';
   }
-
   dom.style.cssText += `animation-${key}: ${val};-moz-animation-${key}: ${val};-webkit-animation-${key}: ${val};`;
 };
 
@@ -23,7 +22,7 @@ const fullpageConfig = {
   beforeChange: (e) => {
     const cur = e.cur;
     const tplkey = 'page' + (cur + 1);
-    const callback = Tpls[`afterInsert${tplkey.toUpperCase()}`];
+    const callback = Tpls[`change${tplkey.toUpperCase()}`];
     callback && callback('before');
   },
   change: (e) => {
@@ -37,7 +36,8 @@ const fullpageConfig = {
       });
 
     const tplkey = 'page' + (cur + 1);
-    const callback = Tpls[`afterInsert${tplkey.toUpperCase()}`];
+    const callback = Tpls[`change${tplkey.toUpperCase()}`];
+
     // 已加载页面直接返回
     if ($page.dataset.load== '1') {
       callback && callback('after');

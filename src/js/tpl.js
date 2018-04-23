@@ -5,7 +5,7 @@ import anime from '../lib/anima.min';
 const forEach = [].forEach;
 
 const tpl = tplConfig => {
-  const { items } = tplConfig || {};
+  const { items, scrollnums } = tplConfig || {};
   let html = ``;
   if (!items) {
     return '配置';
@@ -21,6 +21,33 @@ const tpl = tplConfig => {
     const defcls = noDefclass === true ? '' : `css-animate animated hide w ${itemkey}`;
     html += `<div class="${defcls} ${classes ? classes : ''}" ${dataset}></div>\n`;
   }
+  if(scrollnums) {
+    for(const numKey in scrollnums) {
+      const{ type, key = numKey, val, data, duration = 1000, time = 0, height } = scrollnums[numKey] || {};
+      if (!type || !val) return html;
+      html += `<div class="num-wrapper num-wrapper-${key} css-animate animated hide"
+        data-animate="fadeIn" data-time="${time}" data-val="${val}">`;
+      let num = `<ul class="num-set-${type} nums-${key}">`;
+      for(let i = 0; i < String(val).length; i++){
+        num+= `<li></li>`;
+      }
+      num+='</ul>';
+      html += `${num}\n</div>`;
+
+      let timer = setTimeout(()=>{
+        const $num = document.querySelector(`.cur .num-wrapper-${key}`);
+        if (!$num) return;
+        const $nums = $num.querySelectorAll('li');
+        const { val } = $num.dataset;
+        for (let n = 0; n < String(val).length; n++){
+          $nums[n].classList.add(`num-${String(val)[n]}`);
+          $nums[n].style.cssText = `animation:none;`;
+        }
+        clearTimeout(timer);
+        timer = null;
+      }, time + duration + 500 );
+    }
+  }
   return html;
 };
 
@@ -33,7 +60,7 @@ export const getTpl = key => {
   }
 };
 
-export const afterInsertPAGE2 = (type) => {
+export const changePAGE2 = (type) => {
   const $page2 = document.querySelector('.page-2');
 
   if (document.querySelector('.ren-wrapper')) {
@@ -74,9 +101,42 @@ export const afterInsertPAGE2 = (type) => {
     timer = null;
   }, config.page2.xiaoRenTime);
 
-}
+};
 
-export const afterInsertPAGE18 = (type) => {
+export const changePAGE9 = (type) => {
+  const list = ['w-left-bar', 'w-right-bar', 'w-up-right-arrow'];
+  const $list = document.querySelectorAll(`.${list[0]},.${list[1]},.${list[2]}`);
+  forEach.call($list, dom => dom.classList.remove('change'));
+
+  if(type == 'before') return;
+  list.forEach(key => {
+    let timer = setTimeout(()=> {
+      if(!document.querySelector('.page-9.cur')) return;
+      document.querySelector(`.${key}`).classList.add('change');
+      clearTimeout(timer);
+      timer = null;
+    }, config.page9.items[key].data.time);
+  })
+};
+
+export const changePAGE11 = (type) => {
+  const list = ['w-left-bar-1', 'w-right-bar-1', 'w-up-right-arrow-1'];
+  const $list = document.querySelectorAll(`.${list[0]},.${list[1]},.${list[2]}`);
+  forEach.call($list, dom => dom.classList.remove('change'));
+
+  if(type == 'before') return;
+  list.forEach(key => {
+    let timer = setTimeout(()=> {
+      if(!document.querySelector('.page-11.cur')) return;
+      document.querySelector(`.${key}`).classList.add('change');
+      clearTimeout(timer);
+      timer = null;
+    }, config.page11.items[key].data.time);
+  })
+};
+
+
+export const changePAGE18 = (type) => {
   const $page18 = document.querySelector('.page-18');
 
   if (document.querySelector('.fz-wrapper')) {
@@ -115,4 +175,5 @@ export const afterInsertPAGE18 = (type) => {
     timer = null;
   }, config.page18.fzTime);
 
-}
+};
+

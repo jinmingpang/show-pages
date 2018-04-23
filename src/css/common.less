@@ -219,3 +219,55 @@ li{
 .rotate-s {
   animation: rotate-s 2s infinite linear;
 }
+
+
+.number-set(@type, @w, @h){
+  .num-set-@{type} {
+    min-height: 37.5px;
+    min-width: 100px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    text-align: center;
+  }
+  @keyframes shuffle {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, @h * -1px, 0);
+    }
+  }
+  .loop(9);
+  .loop(@i) when (@i>=0) {
+    .num-@{i}{
+      transform: translate3d(0, @h / 10 * @i * -1px, 0);
+    }
+    .loop(@i - 1);
+  }
+  li{
+    .img;
+    flex-grow: 1;
+    background-image: url("../images/num-@{type}.png");
+    width: @w * 1px;
+    height: @h * 1px;
+  }
+}
+
+.number-set(test, 100, 1000);
+
+@time: 1.5;
+.nums(@type, @n, @w, @h) {
+  .nums-@{type}{
+    width: @w * @n * 1px;
+    height: @h * 1px;
+  }
+  .loop(@n);
+  .loop(@i) when (@i>=1) {
+    .nums-@{type} li:nth-child(@{i}){
+      @t: @time - @i * 0.2;
+      animation: shuffle @t * 1s steps(10) infinite;
+    }
+    .loop(@i - 1);
+  }
+}
