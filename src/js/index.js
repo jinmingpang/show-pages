@@ -59,14 +59,14 @@ const fullpageConfig = {
         var time = dom.dataset.time;
         setTimeout(() => {
           const { dataset = {} } = dom;
-          const { infinite, delay, duration, timing, direction } = dataset;
-          dom.classList.add(dataset.animate);
+          const { animate, infinite, delay, duration, timing, direction } = dataset;
+          animate && dom.classList.add(animate);
           if (infinite){
             dom.classList.add('infinite');
           }
           ['delay', 'duration', 'timing', 'direction', 'count'].forEach(key =>
             animateCss(dom, key, dataset[key]));
-          dom.classList.remove('hide');
+            animate && dom.classList.remove('hide');
         }, time);
     });
   }

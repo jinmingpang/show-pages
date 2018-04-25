@@ -212,6 +212,12 @@ li{
   }
 }
 
+.opcity0 {
+  opacity: 0 !important;
+}
+.opcity1 {
+  opacity: 1 !important;
+}
 .rotate {
   animation: rotate 2s infinite linear;
 }
@@ -220,6 +226,18 @@ li{
   animation: rotate-s 2s infinite linear;
 }
 
+.makeRandom(@min: 0, @max: @min+1, @int: 0) {
+  .checkInt() {
+    @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
+    @base: unit(`@{int} == 1 ? Math.floor(@{getNum}) : @{getNum}`);
+  }
+  .checkInt();
+  @randNum: @base + @min;
+}
+.num-wrapper{
+  position: absolute;
+  z-index: 4;
+}
 
 .number-set(@type, @w, @h){
   .num-set-@{type} {
@@ -230,6 +248,8 @@ li{
     overflow: hidden;
     text-align: center;
   }
+  @ih: @h / 10;
+
   @keyframes shuffle {
     0% {
       transform: translate3d(0, 0, 0);
@@ -241,7 +261,7 @@ li{
   .loop(9);
   .loop(@i) when (@i>=0) {
     .num-@{i}{
-      transform: translate3d(0, @h / 10 * @i * -1px, 0);
+      transform: translate3d(0, @ih * @i * -1px, 0);
     }
     .loop(@i - 1);
   }
@@ -254,18 +274,20 @@ li{
   }
 }
 
-.number-set(test, 100, 1000);
+.number-set(blue, 317, 4780);
+// .number-set(small, 100, 1508);
 
 @time: 1.5;
-.nums(@type, @n, @w, @h) {
+.nums(@type, @n, @w, @h, @mar:0) {
   .nums-@{type}{
-    width: @w * @n * 1px;
+    width: (@w+@mar) * @n * 1px;
     height: @h * 1px;
   }
   .loop(@n);
   .loop(@i) when (@i>=1) {
     .nums-@{type} li:nth-child(@{i}){
       @t: @time - @i * 0.2;
+      margin-right: @mar * 1px;
       animation: shuffle @t * 1s steps(10) infinite;
     }
     .loop(@i - 1);

@@ -1,6 +1,7 @@
 
 import config from './config.yaml';
 import anime from '../lib/anima.min';
+import { LOADIPHLPAPI } from 'dns';
 
 const forEach = [].forEach;
 
@@ -11,7 +12,7 @@ const tpl = tplConfig => {
     return '配置';
   }
   for(const itemkey in items) {
-    const { data, classes, noDefclass } = items[itemkey] || {};
+    const { data, classes = '', noDefclass } = items[itemkey] || {};
     let dataset = ``;
     if(data){
       for(const datakey in data) {
@@ -39,9 +40,14 @@ const tpl = tplConfig => {
         if (!$num) return;
         const $nums = $num.querySelectorAll('li');
         const { val } = $num.dataset;
-        for (let n = 0; n < String(val).length; n++){
-          $nums[n].classList.add(`num-${String(val)[n]}`);
-          $nums[n].style.cssText = `animation:none;`;
+        const l = String(val).length - 1;
+        for (let n = 0; n <= l; n++){
+          let t = setTimeout(()=> {
+            $nums[n].classList.add(`num-${String(val)[n]}`);
+            $nums[n].style.cssText = `animation:none;`;
+            clearTimeout(t);
+            t = null;
+          }, 200 * n);
         }
         clearTimeout(timer);
         timer = null;
@@ -72,14 +78,14 @@ export const changePAGE2 = (type) => {
     let $wrapper = document.createElement('div');
     let html = `<div class="ren-wrapper">`;
     let nan = `<ul class="ren-nan-wrapper">`;
-    let nv = `<ul class="ren-nv-wrapper">`;
+    // let nv = `<ul class="ren-nv-wrapper">`;
     for(let i = 0; i < 9; i++){
       nan+= `<li class="w w-ren-nan ${ i==5 ? 'ren-nan-s' : ''}" ></li>`;
-      nv+= `<li class="w w-ren-nv ${ i==2 || i==7 ? 'ren-nv-s' : ''}" ></li>`;
+      // nv+= `<li class="w w-ren-nv ${ i==2 || i==7 ? 'ren-nv-s' : ''}" ></li>`;
     }
     nan+='</ul>';
-    nv+='</ul>';
-    html+= `${nan}\n${nv}\n</div>`;
+    // nv+='</ul>';
+    html+= `${nan}\n</div>`;
     $wrapper.innerHTML = html;
     $page2.appendChild($wrapper);
   }
@@ -91,7 +97,7 @@ export const changePAGE2 = (type) => {
       direction: 'alternate',
       loop: false,
       easing: 'easeOutExpo',
-      delay: (el, index) => index * 200,
+      delay: (el, index) => index * 50,
     })
     .add({
       scale: 0.9,
@@ -135,6 +141,35 @@ export const changePAGE11 = (type) => {
   })
 };
 
+export const changePAGE13 = (type) => {
+  const $left = document.querySelector('.w-left-arrow');
+  const $right = document.querySelector('.w-right-arrow');
+  const $p1 = document.querySelector('.er-tong');
+  const $p2 = document.querySelector('.san-ya');
+
+  if(type=='before'){
+    if ($p1) {
+      $left.onclick = null;
+      $right.onclick = null;
+      $p1.classList.remove('hide');
+      $p2.classList.add('hide');
+    }
+    return;
+  };
+
+  $left.onclick = change;
+  $right.onclick = change;
+
+  const change = onclick = () => {
+    if($p1.classList.contains('hide')){
+      $p1.classList.remove('hide');
+      $p2.classList.add('hide');
+    }else{
+      $p1.classList.add('hide');
+      $p2.classList.remove('hide');
+    }
+  };
+}
 
 export const changePAGE18 = (type) => {
   const $page18 = document.querySelector('.page-18');
