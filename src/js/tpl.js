@@ -94,7 +94,7 @@ export const changePAGE2 = (type) => {
 
 };
 
-export const changePAGE1= (type) => {
+export const changePAGE9= (type) => {
   const list = ['w-left-bar', 'w-right-bar', 'w-up-right-arrow'];
   const $list = document.querySelectorAll(`.${list[0]},.${list[1]},.${list[2]}`);
   forEach.call($list, dom => dom.classList.remove('change'));
