@@ -530,11 +530,11 @@ page9:
     huo-dong-zeng-zhang:
       data:
         animate: flipInY
-        time: 1000
+        time: 2000
     guo-qu-zeng-zhang:
       data:
         animate: flipInY
-        time: 2000
+        time: 1000
     xiang-dang-yu-past:
       data:
         animate: fadeInLeft
