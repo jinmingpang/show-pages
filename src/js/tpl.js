@@ -37,23 +37,7 @@ const tpl = tplConfig => {
       num+='</ul>';
       html += `${num}\n</div>`;
 
-      let timer = setTimeout(()=>{
-        const $num = document.querySelector(`.cur .num-wrapper-${key}`);
-        if (!$num) return;
-        const $nums = $num.querySelectorAll('li');
-        const { val } = $num.dataset;
-        const l = String(val).length - 1;
-        for (let n = 0; n <= l; n++){
-          let t = setTimeout(()=> {
-            $nums[n].classList.add(`num-${String(val)[n]}`);
-            $nums[n].style.cssText = `animation:none;`;
-            clearTimeout(t);
-            t = null;
-          }, 200 * n);
-        }
-        clearTimeout(timer);
-        timer = null;
-      }, time + duration + 500 );
+
     }
   }
   return html;

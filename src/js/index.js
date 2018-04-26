@@ -6,7 +6,7 @@ import '../css/index.less';
 
 import '../lib/flexible';
 import '../lib/fullpage';
-
+import config from './config.yaml';
 import * as Tpls from './tpl';
 
 const animateCss = (dom, key, val) => {
@@ -20,11 +20,47 @@ const animateCss = (dom, key, val) => {
   dom.style.cssText += `animation-${key}: ${val};-moz-animation-${key}: ${val};-webkit-animation-${key}: ${val};`;
 };
 
+const scrollerNum = (tplkey, type) => {
+  const { scrollnums } = config[tplkey] || {};
+  if(!scrollnums) return;
+  const $nums = document.querySelectorAll('.page.cur .num-wrapper li');
+  if($nums){
+    forEach.call($nums, $num => {
+      $num.class = '';
+      $num.style = '';
+    });
+  }
+  if ( type == 'before') return;
+
+  for(const numKey in scrollnums) {
+    const{ key = numKey, val, duration = 1000, time = 0 } = scrollnums[numKey] || {};
+
+    let timer = setTimeout(()=>{
+      const $num = document.querySelector(`.cur .num-wrapper-${key}`);
+      if (!$num) return;
+      const $nums = $num.querySelectorAll('li');
+      const { val } = $num.dataset;
+      const l = String(val).length - 1;
+      for (let n = 0; n <= l; n++){
+        let t = setTimeout(()=> {
+          $nums[n].classList.add(`num-${String(val)[n]}`);
+          $nums[n].style.cssText = `animation:none;`;
+          clearTimeout(t);
+          t = null;
+        }, 200 * n);
+      }
+      clearTimeout(timer);
+      timer = null;
+    }, time + duration + 500 );
+  }
+};
+
 const fullpageConfig = {
   beforeChange: (e) => {
     const cur = e.cur;
     const tplkey = 'page' + (cur + 1);
     const callback = Tpls[`change${tplkey.toUpperCase()}`];
+    scrollerNum(tplkey, 'before');
     callback && callback('before');
   },
   change: (e) => {
@@ -36,26 +72,20 @@ const fullpageConfig = {
         dom.classList.remove(dom.dataset['animate']);
         dom.classList.add('hide');
       });
-
-    const $nums = $page.querySelectorAll('.num-wrapper li');
-    if($nums){
-      forEach.call($nums, $num => {
-        $num.class = '';
-        $num.style = '';
-      });
-    }
     const tplkey = 'page' + (cur + 1);
     const callback = Tpls[`change${tplkey.toUpperCase()}`];
 
     // 已加载页面直接返回
     if ($page.dataset.load== '1') {
       callback && callback('after');
+      scrollerNum(tplkey, 'after');
       return 1;
     }
 
     // 加载页面
     $page.innerHTML = Tpls.getTpl(tplkey);
     callback && callback(tplkey);
+    scrollerNum(tplkey, 'after');
     $page.dataset.load = 1;
   },
   afterChange: function (e) {
