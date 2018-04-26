@@ -250,12 +250,12 @@ page5:
         animate: fadeInUp
         time: 1600
 page6:
-  scrollnums:
-    num:
-      type: blue
-      time: 3200
-      val: 20
-      duration: 1500
+  # scrollnums:
+  #   num:
+  #     type: blue
+  #     time: 3200
+  #     val: 20
+  #     duration: 1500
   items:
     w-fang-da-jing:
       data:
@@ -271,6 +271,7 @@ page6:
       data:
         animate: slideInLeft
         time: 500
+
     yun-xing-da:
       data:
         animate: slideInRight
@@ -296,6 +297,10 @@ page6:
       data:
         animate: fadeInUp
         time: 1000
+    num-text-30:
+      data:
+        animate: fadeInUp
+        time: 2000
     yi-jian-ling-xiu:
       data:
         animate: fadeInUp
@@ -306,7 +311,7 @@ page6:
         animate: tada
         infinite: true
         duration: 4s
-        time: 3600
+        time: 2600
 
     board-wan-shua:
       data:
@@ -334,7 +339,7 @@ page7:
     num:
       type: blue
       time: 2000
-      val: 47334
+      val: 6131
       duration: 1500
   items:
     w-di-er-icon-2:
@@ -357,6 +362,14 @@ page7:
       data:
         animate: fadeInUp
         time: 1000
+    w-dou-hao:
+      data:
+        animate: fadeIn
+        time: 2000
+    wan-jia-word:
+      data:
+        animate: fadeIn
+        time: 2000
     w-xiao-nv-hai:
       data:
         animate: pulse
@@ -401,7 +414,7 @@ page8:
     num:
       type: blue
       time: 2000
-      val: 12345
+      val: 106
       duration: 1200
   items:
     bg-mask:
@@ -416,10 +429,7 @@ page8:
       data:
         animate: fadeInDown
         time: 1400
-    ming-word:
-      data:
-        animate: slideInDown
-        time: 1800
+
     di-er-icon:
        data:
         animate: fadeIn
@@ -439,10 +449,15 @@ page8:
       data:
         animate: slideInUp
         time: 2500
-    w-dou-hao:
+    dot-word:
       data:
         animate: fadeIn
-        time: 2400
+        time: 2200
+    wan-word:
+      data:
+        animate: slideInRight
+        duration: .5s
+        time: 2200
     fen-si-zeng-zhang:
       data:
         animate: fadeInUp
@@ -452,12 +467,12 @@ page8:
         animate: swing
         time: 2500
 page9:
-  scrollnums:
-    num:
-      type: blue
-      time: 3800
-      val: 200
-      duration: 1200
+  # scrollnums:
+  #   num:
+  #     type: blue
+  #     time: 3800
+  #     val: 200
+  #     duration: 1200
   items:
     w-di-er-icon-2:
       data:
@@ -504,10 +519,14 @@ page9:
     w-right-bar:
       data:
         time: 2800
-    tian-word:
+    num-text-130:
       data:
         animate: tada
-        time: 4000
+        time: 3800
+    tian-word:
+      data:
+        animate: fadeIn
+        time: 4200
     huo-dong-zeng-zhang:
       data:
         animate: flipInY
@@ -587,7 +606,7 @@ page11:
     num:
       type: blue
       time: 1400
-      val: 234
+      val: 30
       duration: 1200
   items:
     w-di-san-icon-2:
@@ -696,7 +715,11 @@ page12:
         time: 1000
     eight-hour:
       data:
-        animate: flipInX
+        animate: fadeIn
+        time: 1400
+    num-text-1:
+      data:
+        animate: zoomIn
         time: 1400
     nai-fen-li-wu:
        data:
@@ -766,7 +789,7 @@ page14:
     num:
       type: blue
       time: 2000
-      val: 200
+      val: 332
       duration: 1200
   items:
     w-di-si-icon-2:
@@ -856,7 +879,7 @@ page15:
     num:
       type: blue
       time: 1800
-      val: 89
+      val: 760
       duration: 1200
   items:
     w-fei-ji-right:
@@ -911,22 +934,22 @@ page15:
         time: 500
 
 page16:
-  scrollnums:
-    xinke:
-      type: blue
-      time: 1800
-      val: 89
-      duration: 1200
-    zhengti:
-      type: blue
-      time: 1800
-      val: 89
-      duration: 1200
-    xiaoliang:
-      type: blue
-      time: 1800
-      val: 89
-      duration: 1200
+  # scrollnums:
+    # xinke:
+    #   type: blue
+    #   time: 1800
+    #   val: 89
+    #   duration: 1200
+    # zhengti:
+    #   type: blue
+    #   time: 1800
+    #   val: 89
+    #   duration: 1200
+    # xiaoliang:
+    #   type: blue
+    #   time: 1800
+    #   val: 89
+    #   duration: 1200
   items:
     w-di-wu-icon-2:
       data:
@@ -963,28 +986,28 @@ page16:
       data:
         animate: fadeIn
         time: 1800
-    bai-fen-hao-1:
+    text-55-p:
       data:
-        animate: fadeIn
-        time: 1900
-    bai-fen-hao-2:
+        animate: flash
+        time: 1200
+    text-200-p:
       data:
-        animate: fadeIn
-        time: 1900
-    bai-fen-hao-3:
+        animate: flash
+        time: 2000
+    text-255-p:
       data:
-        animate: fadeIn
-        time: 1900
+        animate: flash
+        time: 3400
     mao-chao-zeng-zhang:
       data:
         animate: flash
-        time: 3600
+        time: 5200
     xin-ke-zeng-zhang:
       data:
         animate: flash
         time: 1800
 
-    xiao-liang-zeng-zhang:
+    text-p-wenzi:
       data:
         animate: fadeInDown
         time: 4000

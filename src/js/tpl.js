@@ -138,7 +138,7 @@ export const changePAGE11 = (type) => {
       document.querySelector(`.${key}`).classList.add('change');
       clearTimeout(timer);
       timer = null;
-    }, config.page11items[key].data.time);
+    }, config.page11.items[key].data.time);
   })
 };
 
