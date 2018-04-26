@@ -37,6 +37,13 @@ const fullpageConfig = {
         dom.classList.add('hide');
       });
 
+    const $nums = $page.querySelectorAll('.num-wrapper li');
+    if($nums){
+      forEach.call($nums, $num => {
+        $num.class = '';
+        $num.style = '';
+      });
+    }
     const tplkey = 'page' + (cur + 1);
     const callback = Tpls[`change${tplkey.toUpperCase()}`];
 

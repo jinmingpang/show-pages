@@ -245,7 +245,7 @@ page5:
       data:
         animate: bounceInUp
         time: 1000
-    mao-er-chart-board:
+    tian-mao-baord-er:
       data:
         animate: fadeInUp
         time: 1600
@@ -789,7 +789,7 @@ page14:
     num:
       type: blue
       time: 2000
-      val: 332
+      val: 322
       duration: 1200
   items:
     w-di-si-icon-2:
