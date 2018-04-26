@@ -1,6 +1,8 @@
 
 import config from './config.yaml';
 import anime from '../lib/anima.min';
+import '../lib/tiny.slider';
+
 import { LOADIPHLPAPI } from 'dns';
 
 const forEach = [].forEach;
@@ -57,7 +59,6 @@ const tpl = tplConfig => {
   return html;
 };
 
-
 export const getTpl = key => {
   if (config[key]) {
     return tpl(config[key]);
@@ -67,7 +68,7 @@ export const getTpl = key => {
 };
 
 export const changePAGE2 = (type) => {
-  const $page2 = document.querySelector('.page-2');
+  const $page = document.querySelector('.page-2');
 
   if (document.querySelector('.ren-wrapper')) {
     forEach.call(document.querySelectorAll('.ren-wrapper li'), dom => {
@@ -87,7 +88,7 @@ export const changePAGE2 = (type) => {
     // nv+='</ul>';
     html+= `${nan}\n</div>`;
     $wrapper.innerHTML = html;
-    $page2.appendChild($wrapper);
+    $page.appendChild($wrapper);
   }
   if (type == 'before') return;
   let timer = setTimeout(()=> {
@@ -109,7 +110,7 @@ export const changePAGE2 = (type) => {
 
 };
 
-export const changePAGE9 = (type) => {
+export const changePAGE8 = (type) => {
   const list = ['w-left-bar', 'w-right-bar', 'w-up-right-arrow'];
   const $list = document.querySelectorAll(`.${list[0]},.${list[1]},.${list[2]}`);
   forEach.call($list, dom => dom.classList.remove('change'));
@@ -117,15 +118,15 @@ export const changePAGE9 = (type) => {
   if(type == 'before') return;
   list.forEach(key => {
     let timer = setTimeout(()=> {
-      if(!document.querySelector('.page-9.cur')) return;
+      if(!document.querySelector('.page-8.cur')) return;
       document.querySelector(`.${key}`).classList.add('change');
       clearTimeout(timer);
       timer = null;
-    }, config.page9.items[key].data.time);
+    }, config.page8.items[key].data.time);
   })
 };
 
-export const changePAGE11 = (type) => {
+export const changePAGE10 = (type) => {
   const list = ['w-left-bar-1', 'w-right-bar-1', 'w-up-right-arrow-1'];
   const $list = document.querySelectorAll(`.${list[0]},.${list[1]},.${list[2]}`);
   forEach.call($list, dom => dom.classList.remove('change'));
@@ -133,46 +134,69 @@ export const changePAGE11 = (type) => {
   if(type == 'before') return;
   list.forEach(key => {
     let timer = setTimeout(()=> {
-      if(!document.querySelector('.page-11.cur')) return;
+      if(!document.querySelector('.page-10.cur')) return;
       document.querySelector(`.${key}`).classList.add('change');
       clearTimeout(timer);
       timer = null;
-    }, config.page11.items[key].data.time);
+    }, config.page10.items[key].data.time);
   })
 };
 
-export const changePAGE13 = (type) => {
-  const $left = document.querySelector('.w-left-arrow');
-  const $right = document.querySelector('.w-right-arrow');
-  const $p1 = document.querySelector('.er-tong');
-  const $p2 = document.querySelector('.san-ya');
+let page12Slider = null;
+export const changePAGE12 = (type) => {
+  const $page = document.querySelector('.page-12');
+  const $ertong = $page.querySelector('.er-tong');
+  const $left = $page.querySelector('.w-left-arrow');
+  const $right = $page.querySelector('.w-right-arrow');
+  let $outer = $page.querySelector('.tns-outer');
 
-  if(type=='before'){
-    if ($p1) {
-      $left.onclick = null;
-      $right.onclick = null;
-      $p1.classList.remove('hide');
-      $p2.classList.add('hide');
+
+  if ($outer){
+    $outer.style.cssText= 'opacity:0;';
+    $ertong.style.cssText = 'opacity:1;';
+    page12Slider && page12Slider.goTo('first');
+  } else {
+    let $wrapper = document.createElement('div');
+    let html = `<div class="tupian-wrapper">`;
+    let tp = '';
+    for(let i = 0; i < 5; i++){
+      tp += `<div class="tp tp-${i+1}" ></div>`;
     }
-    return;
-  };
+    html+= `${tp}\n</div>`;
+    $wrapper.innerHTML = html;
+    $page.appendChild($wrapper);
 
-  $left.onclick = change;
-  $right.onclick = change;
+    page12Slider = window.tns({
+      container: '.tupian-wrapper',
+      items: 1,
+      startIndex: 0,
+      autoHeight: true,
+    });
 
-  const change = onclick = () => {
-    if($p1.classList.contains('hide')){
-      $p1.classList.remove('hide');
-      $p2.classList.add('hide');
-    }else{
-      $p1.classList.add('hide');
-      $p2.classList.remove('hide');
+    $left.onclick = () => {
+      document.querySelector('.tns-controls [data-controls="prev"]').click();
     }
-  };
+    $right.onclick = () => {
+      document.querySelector('.tns-controls [data-controls="next"]').click();
+    }
+
+  }
+  if (type == 'before') return;
+
+  let timer = setTimeout(()=> {
+    $outer = $page.querySelector('.tns-outer');
+    if (!$outer) return;
+    $outer.style.cssText= 'opacity:1;';
+    $ertong.style.cssText = 'display:none;';
+    clearTimeout(timer);
+    timer = null;
+  }, config.page12.items['er-tong'].data.time + 1400);
+
+
 }
 
-export const changePAGE18 = (type) => {
-  const $page18 = document.querySelector('.page-18');
+export const changePAGE17 = (type) => {
+  const $page = document.querySelector('.page-17');
 
   if (document.querySelector('.fz-wrapper')) {
     forEach.call(document.querySelectorAll('.fz-wrapper li'), dom => {
@@ -188,11 +212,11 @@ export const changePAGE18 = (type) => {
     }
     html+= `${fz}</ul></div>`;
     $wrapper.innerHTML = html;
-    $page18.appendChild($wrapper);
+    $page.appendChild($wrapper);
   }
   if (type == 'before') return;
   let timer = setTimeout(()=> {
-    if(!document.querySelector('.page-18.cur')) return;
+    if(!document.querySelector('.page-17.cur')) return;
     anime.timeline({
       targets: '.fz-wrapper li',
       opacity: 1,
@@ -208,7 +232,7 @@ export const changePAGE18 = (type) => {
     })
     clearTimeout(timer);
     timer = null;
-  }, config.page18.fzTime);
+  }, config.page17.fzTime);
 
 };
 

@@ -190,71 +190,8 @@ page4:
         animate: lightSpeedIn
         time: 1200
         duration: 500ms
+
 page5:
-  scrollnums:
-    num:
-      type: blue
-      time: 1800
-      val: 1234567
-      duration: 1000
-  items:
-    w-di-yi-icon-2:
-      data:
-        animate: fadeIn
-        time: 300
-    w-da-mu-zhi:
-      data:
-        animate: pulse
-        time: 1500
-        infinite: true
-    w-xiao-huo-pao:
-      data:
-        animate: fadeInLeft
-        time: 300
-    w-peng-you:
-      data:
-        animate: fadeInRight
-        time: 300
-    w-jiang-bei:
-      data:
-        animate: fadeInUp
-        duration: .5s
-        time: 1500
-    w-huo-pao:
-      data:
-        animate: fadeIn
-        time: 1600
-    w-xing-shuang:
-      data:
-        animate: flash
-        infinite: true
-        time: 2400
-        duration: 8s
-    wan-word:
-      data:
-        animate: fadeIn
-        time: 1000
-    dou-hao1:
-      data:
-        animate: fadeIn
-        time: 1800
-    dou-hao2:
-      data:
-        animate: fadeIn
-        time: 1900
-    tan-suo-bao-guang:
-      data:
-        animate: fadeInDown
-        time: 100
-    lei-ji-xin-zeng:
-      data:
-        animate: bounceInUp
-        time: 1000
-    mao-er-chart-board:
-      data:
-        animate: fadeInUp
-        time: 1600
-page6:
   scrollnums:
     num:
       type: blue
@@ -334,7 +271,7 @@ page6:
         animate: fadeIn
         time: 1500
 
-page7:
+page6:
   scrollnums:
     num:
       type: blue
@@ -401,7 +338,7 @@ page7:
       data:
         animate: fadeIn
         time: 1300
-page8:
+page7:
   scrollnums:
     num:
       type: blue
@@ -456,7 +393,7 @@ page8:
       data:
         animate: swing
         time: 2500
-page9:
+page8:
   scrollnums:
     num:
       type: blue
@@ -530,7 +467,7 @@ page9:
         animate: fadeInRight
         time: 3000
 
-page10:
+page9:
   items:
     w-fei-ji-right:
       data:
@@ -587,7 +524,7 @@ page10:
         animate: zoomIn
         time: 1500
 
-page11:
+page10:
   scrollnums:
     num:
       type: blue
@@ -664,7 +601,7 @@ page11:
         animate: flipInY
         time: 1800
 
-page12:
+page11:
   items:
     w-di-san-icon-2:
       data:
@@ -708,7 +645,7 @@ page12:
         animate: bounceInUp
         time: 1800
 
-page13:
+page12:
   items:
     w-fei-ji-right:
       data:
@@ -755,8 +692,8 @@ page13:
       data:
         animate: rotateInDownRight
         time: 1200
-    san-ya:
-      classes: hide rotateIn
+    # san-ya:
+    #   classes: hide rotateIn
     er-tong:
       data:
         animate: rotateIn
@@ -766,7 +703,7 @@ page13:
         animate: fadeIn
         time: 800
 
-page14:
+page13:
   scrollnums:
     num:
       type: blue
@@ -856,7 +793,7 @@ page14:
         animate: rotateIn
         time: 3000
 
-page15:
+page14:
   scrollnums:
     num:
       type: blue
@@ -915,7 +852,7 @@ page15:
         animate: slideInUp
         time: 500
 
-page16:
+page15:
   scrollnums:
     xinke:
       type: blue
@@ -998,7 +935,7 @@ page16:
         animate: slideInDown
         time: 4500
 
-page17:
+page16:
   items:
     w-di-wu-icon-2:
       data:
@@ -1042,7 +979,7 @@ page17:
       data:
         animate: fadeInDown
         time: 1800
-page18:
+page17:
   fzTime: 1000
   items:
     wei-lai-text:

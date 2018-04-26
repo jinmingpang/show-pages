@@ -1,4 +1,5 @@
 import '../lib/normalize.css';
+import '../lib/tiny.sider.css';
 import '../lib/animate.min.css';
 import '../css/index.less';
 
