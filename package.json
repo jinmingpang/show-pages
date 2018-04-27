@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "npm run clean && parcel build --detailed-report --no-source-maps",
-    "start": "parcel serve index.html -d ./dist --no-cache",
+    "build": "npm run clean && parcel build src/index.html --public-url ./ --detailed-report --no-source-maps",
+    "start": "parcel serve src/index.html --no-cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

@@ -6,6 +6,8 @@ import '../css/index.less';
 
 import '../lib/flexible';
 import '../lib/fullpage';
+import './music';
+
 import config from './config.yaml';
 import * as Tpls from './tpl';
 

@@ -293,3 +293,17 @@ li{
     .loop(@i - 1);
   }
 }
+
+.running {
+  animation-play-state: running !important;
+}
+
+.paused {
+  animation-play-state: paused !important;
+}
+
+.misc-icon {
+  .rotate;
+  .bg('music-bg-on.png', 100, 100, 50, -1, -1, 40 );
+  z-index: 4;
+}
