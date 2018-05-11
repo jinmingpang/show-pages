@@ -1,13 +1,6 @@
 module.exports = {
   plugins: {
-    'postcss-assets': {
-
-    },
-    autoprefixer: {
-      grid: false,
-      browsers: ['Android > 4.4', 'iOS >= 8', 'last 2 versions'],
-    },
-    'postcss-pxtorem': {
+    'posthtml-px2rem': {
       rootValue: 108,
       unitPrecision: 5,
       propList: ['*'],
@@ -17,4 +10,4 @@ module.exports = {
       minPixelValue: 0
     }
   }
-}
+};

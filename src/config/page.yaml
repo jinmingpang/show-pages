@@ -1,0 +1,11 @@
+-
+  background:
+    color: red
+  items:
+    x-1:
+      data:
+        animate: flash
+        dration: 4s
+        count: 5 # infinite
+        show: 500
+        delay: 1000

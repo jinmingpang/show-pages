@@ -1,25 +1,48 @@
 {
-  "name": "atm-h5",
+  "name": "show-pages",
   "version": "1.0.0",
-  "description": "h5 page for aitamei",
+  "description": "mobile show pages",
   "main": "index.html",
   "scripts": {
+    "start": "parcel serve src/index.pug --no-cache",
+    "build": "npm run clean && parcel build src/index.pug --public-url ./ --detailed-report --no-source-maps",
+    "prettier": "prettier --write ./src/**/**/*",
     "clean": "rm -rf ./dist",
-    "build": "npm run clean && parcel build src/index.html --public-url ./ --detailed-report --no-source-maps",
-    "start": "parcel serve src/index.html --no-cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "h5"
+    "mobile",
+    "fullpage"
   ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^8.3.0",
+    "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.6.1",
-    "less": "^2.7.3",
+    "debug": "^3.1.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "parcel-bundler": "^1.7.1",
+    "postcss-assets": "^5.0.0",
     "postcss-modules": "^1.1.0",
-    "postcss-pxtorem": "^4.0.1"
+    "postcss-pxtorem": "^4.0.1",
+    "posthtml-px2rem": "^0.0.3",
+    "prettier": "1.11.1",
+    "pug": "^2.0.3",
+    "stylelint": "^8.4.0",
+    "stylelint-config-prettier": "^3.0.4",
+    "stylelint-config-standard": "^18.0.0",
+    "stylus": "^0.54.5"
+  },
+  "lint-staged": {
+    "**/*.{js,styl}": "npm run prettier"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
   }
 }
