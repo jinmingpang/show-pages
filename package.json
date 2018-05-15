@@ -4,11 +4,9 @@
   "description": "mobile show pages",
   "main": "index.html",
   "scripts": {
-    "start": "parcel serve src/index.pug --no-cache",
+    "serve": "parcel serve src/index.pug --no-cache",
     "build": "npm run clean && parcel build src/index.pug --public-url ./ --detailed-report --no-source-maps",
-    "prettier": "prettier --write ./src/**/**/*",
-    "clean": "rm -rf ./dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write './src/{css,js,plugins,utils}/**/*.{js,styl}"
   },
   "keywords": [
     "mobile",
@@ -16,6 +14,11 @@
   ],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.12.2",
+    "js-yaml": "^3.11.0",
+    "parcel-bundler": "^1.7.1"
+  },
   "devDependencies": {
     "autoprefixer": "^8.3.0",
     "babel-eslint": "^8.2.3",
@@ -25,7 +28,6 @@
     "eslint-config-prettier": "^2.9.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
-    "parcel-bundler": "^1.7.1",
     "postcss-assets": "^5.0.0",
     "postcss-modules": "^1.1.0",
     "postcss-pxtorem": "^4.0.1",
@@ -38,7 +40,7 @@
     "stylus": "^0.54.5"
   },
   "lint-staged": {
-    "**/*.{js,styl}": "npm run prettier"
+    "**/*.{js,styl}": "npm run format"
   },
   "husky": {
     "hooks": {

@@ -1,0 +1,20 @@
+{
+  "name": "show-pages",
+  "version": "1.0.0",
+  "description": "mobile show pages",
+  "main": "index.html",
+  "scripts": {
+    "serve": "node ../cli.js serve",
+    "build": "node ../cli.js build",
+    "clean": "rm -rf ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mobile",
+    "fullpage"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}

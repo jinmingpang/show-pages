@@ -2,7 +2,7 @@ const beforeChangePage = () => {
 
 }
 
-const chagePange = () => {
+const onChagePange = () => {
 
 };
 
