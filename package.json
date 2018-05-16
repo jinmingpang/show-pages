@@ -4,9 +4,12 @@
   "description": "mobile show pages",
   "main": "index.html",
   "scripts": {
-    "serve": "parcel serve src/index.pug --no-cache",
-    "build": "npm run clean && parcel build src/index.pug --public-url ./ --detailed-report --no-source-maps",
-    "format": "prettier --write './src/{css,js,plugins,utils}/**/*.{js,styl}"
+    "serve": "node ./bin/cli serve",
+    "build": "node ./bin/cli build",
+    "lint:staged": "lint-staged",
+    "lint:style": "stylint ./src",
+    "lint:js": "eslint ./{src,bin}/**/*.js",
+    "format": "prettier --write './src/{js,plugins,utils}/**/*.{js,yaml}'"
   },
   "keywords": [
     "mobile",
@@ -15,7 +18,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "art-template": "^4.12.2",
     "js-yaml": "^3.11.0",
     "parcel-bundler": "^1.7.1"
   },
@@ -24,8 +26,10 @@
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.6.1",
     "debug": "^3.1.0",
-    "eslint-config-airbnb": "^16.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.11.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
     "postcss-assets": "^5.0.0",
@@ -33,18 +37,16 @@
     "postcss-pxtorem": "^4.0.1",
     "posthtml-px2rem": "^0.0.3",
     "prettier": "1.11.1",
-    "pug": "^2.0.3",
-    "stylelint": "^8.4.0",
-    "stylelint-config-prettier": "^3.0.4",
-    "stylelint-config-standard": "^18.0.0",
+    "stylint": "^1.5.9",
     "stylus": "^0.54.5"
   },
   "lint-staged": {
-    "**/*.{js,styl}": "npm run format"
+    "*.js": "npm run lint:js && npm run format",
+    "*.styl": "npm run lint:style"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint-staged"
+      "pre-commit": "npm run lint:staged"
     }
   }
 }

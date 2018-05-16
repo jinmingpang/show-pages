@@ -1,4 +1,4 @@
-const { spawn, exec } = require('child_process');
+const { spawn } = require('child_process');
 const fs = require('fs');
 const yaml = require('js-yaml');
 const chalk = require('chalk');
@@ -11,27 +11,28 @@ const args = process.argv.splice(2);
 
 const opts = {
   serve: '--no-cache',
-  build: `--detailed-report --no-source-maps --no-cache -d ${paths.user.dist} --public-url ./`
+  build: `--detailed-report --no-source-maps --no-cache -d ${paths.user.dist} --public-url ./`,
 };
 
 const isServe = args[0] === 'serve';
-const isBuild = args[0] === 'build'
+const isBuild = args[0] === 'build';
 
 if(!opts[args[0]]){
-  console.log(`请输入正确的命令 serve 或者 build`)
+  logger.error(`请输入正确的命令 serve 或者 build`)
   return;
 }
 
 if(!fs.existsSync(paths.user.config) || !fs.existsSync(paths.user.pageConfig)){
-  console.log('请添加 app.yaml 和 page.yaml配置文件');
+  logger.error('请添加 ./app.yaml 和 ./page.yaml配置文件');
   return;
 }
 
+// 初始化构建
 init();
 
-const command = spawn(paths.lib.parcel, [
-    args[0], paths.lib.entryFile
-  ].concat(opts[args[0]].split(' ')
+// 执行命令
+const command = spawn(paths.lib.parcel, [args[0], paths.lib.entryFile]
+  .concat(opts[args[0]].split(' ')
 ));
 
 command.stdout.on( 'data', data => {
@@ -86,10 +87,10 @@ function genarateIndexHtml() {
 
 // 配置文件修改 自动更新
 function watchFile() {
-  const fileList = [
+  [
     paths.user.config,
     paths.lib.config,
-    paths.lib.entryTpl
+    paths.lib.entryTpl,
   ].forEach(path => fs.watchFile(path, genarateIndexHtml));
 }
 
@@ -102,7 +103,7 @@ function buildLib() {
     filter: filePath => {
       if(/DS_Store/.test(filePath)) return false;
       return true;
-    }
+    },
   });
 }
 

@@ -11,33 +11,32 @@ const removeFile = (filePath) => {
 };
 
 // 删除文件夹
-const removeDirRecursiveSync = (path) => {
-  if(fs.existsSync(path)) {
-    fs.readdirSync(path).forEach(function(file,index){
-      const curPath = path + "/" + file;
+const removeDirRecursiveSync = srouce => {
+  if(fs.existsSync(srouce)) {
+    fs.readdirSync(srouce).forEach(file => {
+      const curPath = `${srouce}/${file}`;
       if(fs.lstatSync(curPath).isDirectory()) { // recurse
         removeDirRecursiveSync(curPath);
       } else { // delete file
         removeFile(curPath);
       }
     });
-    fs.rmdirSync(path);
+    fs.rmdirSync(srouce);
   }
 };
 
 // 检查需求文件夹,不存在则创建一个新文件夹
-const checkDir = (path) => {
-  if(fs.existsSync(path)){
-    removeDirRecursiveSync(path);
+const checkDir = (srouce) => {
+  if(fs.existsSync(srouce)){
+    removeDirRecursiveSync(srouce);
   }
-  fs.mkdirSync(path);
+  fs.mkdirSync(srouce);
 };
 
 // 复制文件
 const copyFileSync = (source, target, parser) => {
-
-  var targetFile = target;
-  //if target is a directory a new file with the same name will be created
+  let targetFile = target;
+  // if target is a directory a new file with the same name will be created
   if(fs.existsSync(target)) {
     if(fs.lstatSync(target).isDirectory()) {
       targetFile = path.join(target, path.basename(source));
@@ -55,7 +54,7 @@ const copyDirRecursiveSync = (source, target, options = {}) => {
   const { filter, parser, withRootDir = true } = options;
 
 
-  //check if folder needs to be created or integrated
+  // check if folder needs to be created or integrated
   let targetFolder = path.join(target, path.basename(source));
 
   if(!withRootDir){ // not copy with the root dir
@@ -67,7 +66,7 @@ const copyDirRecursiveSync = (source, target, options = {}) => {
     fs.mkdirSync(targetFolder);
   }
 
-  //copy
+  // copy recursive
   if ( fs.lstatSync(source).isDirectory() ) {
     files = fs.readdirSync(source);
     files.forEach(file => {
@@ -93,10 +92,14 @@ const template = (tpl, data) => {
   let cursor = 0;
   let match;
 
-  const add = function(line, js) {
-      js? (code += line.match(reExp) ? line + '\n' : 'r.push(' + line + ');\n') :
-          (code += line != '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '');
-      return add;
+  const add = (line, js) => {
+    /* eslint-disable no-unused-expressions */
+    js ? (code += line.match(reExp) ?
+      `${line}\n` : `r.push(${line});\n`) :
+        (code += line !== '' ?
+          `r.push("${line.replace(/"/g, '\\"')}");\n` :
+            '');
+    return add;
   }
   while(match = re.exec(tpl)) {
       add(tpl.slice(cursor, match.index))(match[1], true);
@@ -104,6 +107,7 @@ const template = (tpl, data) => {
   }
   add(tpl.substr(cursor, tpl.length - cursor));
   code += 'return r.join("");';
+  // eslint-disable-next-line
   return new Function(code.replace(/[\r\t\n]/g, '')).apply(data);
 };
 
@@ -127,5 +131,5 @@ module.exports = {
   copyFileSync,
   copyDirRecursiveSync,
   srcParser,
-  template
+  template,
 };

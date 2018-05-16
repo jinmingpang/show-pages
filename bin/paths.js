@@ -9,7 +9,7 @@ module.exports = {
     path: path.relative(`${libRoot}/src`, userRoot),
     dist: `${userRoot}/dist`,
     config: `${userRoot}/app.yaml`,
-    pageConfig: `${userRoot}/page.yaml`
+    pageConfig: `${userRoot}/page.yaml`,
   },
   lib: {
     src: `${libRoot}/src`,
@@ -17,6 +17,6 @@ module.exports = {
     parcel: `${libRoot}/node_modules/.bin/parcel`,
     config: `${libRoot}/dist/app.yaml`,
     entryTpl: `${libRoot}/dist/index.tpl`,
-    entryFile: `${libRoot}/dist/index.html`
-  }
+    entryFile: `${libRoot}/dist/index.html`,
+  },
 };

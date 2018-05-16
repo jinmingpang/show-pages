@@ -1,5 +1,3 @@
-import tpl from '../lib/art-template.min';
+// import tpl from '../lib/art-template.min';
 
-export const getPageTpl = () => {
-
-};
+// export const getPageTpl = () => {};

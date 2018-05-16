@@ -1,11 +1,5 @@
-const beforeChangePage = () => {
+// const beforeChangePage = () => {};
 
-}
+// const onChagePange = () => {};
 
-const onChagePange = () => {
-
-};
-
-const afterChangePage = () => {
-
-};
+// const afterChangePage = () => {};
