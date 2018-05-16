@@ -124,6 +124,11 @@ const srcParser = (fileName, target) => {
   return file;
 };
 
+const srcFilter = filePath => {
+  if(/DS_Store|src\/(app\.yaml|index.tpl)/.test(filePath)) return false;
+  return true;
+}
+
 module.exports = {
   removeDirRecursiveSync,
   checkDir,
@@ -132,4 +137,5 @@ module.exports = {
   copyDirRecursiveSync,
   srcParser,
   template,
+  srcFilter,
 };

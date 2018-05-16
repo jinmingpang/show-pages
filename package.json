@@ -1,7 +1,7 @@
 {
   "name": "show-pages",
-  "version": "1.0.0",
-  "description": "mobile show pages",
+  "version": "0.0.1",
+  "description": "render mobile show pages with simple a yaml config",
   "main": "index.html",
   "scripts": {
     "serve": "node ./bin/cli serve",

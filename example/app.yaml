@@ -1,6 +1,6 @@
 title: hello wrold 3456
 keywords: show pages
 description: hello show pages
-designWidth: 750
+designWidth: 1080
 bgm: url
-startIndex: 2 # default. start with num 1
+startIndex: 1 # default. start with num 1

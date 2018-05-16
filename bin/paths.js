@@ -12,11 +12,13 @@ module.exports = {
     pageConfig: `${userRoot}/page.yaml`,
   },
   lib: {
+    root: libRoot,
     src: `${libRoot}/src`,
     dist: `${libRoot}/dist`,
     parcel: `${libRoot}/node_modules/.bin/parcel`,
-    config: `${libRoot}/dist/app.yaml`,
-    entryTpl: `${libRoot}/dist/index.tpl`,
+    defConfig: `${libRoot}/src/app.yaml`,
+    config: `${libRoot}/app.json`,
+    entryTpl: `${libRoot}/src/index.tpl`,
     entryFile: `${libRoot}/dist/index.html`,
   },
 };

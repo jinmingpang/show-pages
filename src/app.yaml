@@ -5,4 +5,4 @@ designWidth: 750
 bgm: url
 shortcutIcon: http://g.alicdn.com/mui/global/1.2.35/file/favicon.ico
 appleTouchIcon: http://gw.alicdn.com/tfs/TB1m9hGhXOWBuNjy0FiXXXFxVXa-152-152.jpg
-startIndex: 2 # default. start with num 1
+startIndex: 1 # default. start with num 1

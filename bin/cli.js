@@ -72,11 +72,14 @@ command.on('error', (err) => {
 function genarateIndexHtml() {
   try {
     const userConfig = yaml.safeLoad(fs.readFileSync(paths.user.config, 'utf8'));
-    const defConfig = yaml.safeLoad(fs.readFileSync(paths.lib.config, 'utf8'));
+    const defConfig = yaml.safeLoad(fs.readFileSync(paths.lib.defConfig, 'utf8'));
 
     const config = Object.assign(defConfig, userConfig);
 
     utils.removeFile(paths.lib.entryFile);
+    utils.removeFile(paths.lib.config);
+
+    fs.writeFileSync(paths.lib.config, JSON.stringify(config));
     fs.writeFileSync(paths.lib.entryFile,  utils.template(fs.readFileSync(paths.lib.entryTpl, 'utf-8'), config));
 
   } catch (e) {
@@ -89,7 +92,7 @@ function genarateIndexHtml() {
 function watchFile() {
   [
     paths.user.config,
-    paths.lib.config,
+    paths.lib.defConfig,
     paths.lib.entryTpl,
   ].forEach(path => fs.watchFile(path, genarateIndexHtml));
 }
@@ -100,19 +103,19 @@ function buildLib() {
   utils.copyDirRecursiveSync(paths.lib.src, paths.lib.dist, {
     withRootDir: false,
     parser:  utils.srcParser,
-    filter: filePath => {
-      if(/DS_Store/.test(filePath)) return false;
-      return true;
-    },
+    filter: utils.srcFilter,
   });
 }
 
 // 监听源文件 变化
 function watchLib() {
   fs.watch(paths.lib.src, {recursive: true}, (eventType, filename) => {
+    const source = `${paths.lib.src}/${filename}`;
+    if(!utils.srcFilter(source)) return;
+
     logger.clear();
     logger.status(emoji.progress, 'Building filename...');
-    utils.copyFileSync(`${paths.lib.src}/${filename}`, `${paths.lib.dist}/${filename}`, utils.srcParser);
+    utils.copyFileSync(source, `${paths.lib.dist}/${filename}`, utils.srcParser);
   });
 }
 

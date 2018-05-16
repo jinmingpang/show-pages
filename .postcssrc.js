@@ -1,3 +1,5 @@
+const config = require('./app.json') || {};
+
 module.exports = {
   plugins: {
     'postcss-assets': {
@@ -8,7 +10,7 @@ module.exports = {
       browsers: ['Android > 4.4', 'iOS >= 8', 'last 2 versions'],
     },
     'postcss-pxtorem': {
-      rootValue: 108,
+      rootValue: config.designWidth || 750,
       unitPrecision: 5,
       propList: ['*'],
       selectorBlackList: [],

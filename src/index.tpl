@@ -16,6 +16,7 @@
     <title><% this.title %></title>
   </head>
   <body>
+    <div class="root"></div>
     <script src="js/index.js"></script>
   </body>
 </html>
