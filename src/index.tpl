@@ -9,11 +9,11 @@
     <meta name="full-screen" content="yes">
     <meta name="browsermode" content="application">
     <meta name="x5-orientation" content="portrait">
-    <meta name="Keywords" content="{{keywords}}">
-    <meta name="description" content="{{description}}">
-    <link rel="apple-touch-icon" href="{{appleTouchIcon}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{shortcutIcon}}">
-    <title>{{title}}</title>
+    <meta name="Keywords" content="<% this.keywords %>">
+    <meta name="description" content="<% this.description %>">
+    <link rel="apple-touch-icon" href="<% this.appleTouchIcon %>">
+    <link rel="shortcut icon" type="image/x-icon" href="<% this.shortcutIcon %>">
+    <title><% this.title %></title>
   </head>
   <body>
     <script src="js/index.js"></script>

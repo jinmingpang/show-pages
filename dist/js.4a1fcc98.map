@@ -1,1 +1,0 @@
-{"version":3,"sources":["js/index.js"],"names":["init"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AACA;;AAEA,IAAMA,OAAO,SAAPA,IAAO,GAAM,CAElB,CAFD;;AAIAA","file":"js.4a1fcc98.map","sourceRoot":"../src","sourcesContent":["// import '../css/index.styl';\n// import '../lib/fullpage';\n\nconst init = () => {\n\n};\n\ninit();\n"]}

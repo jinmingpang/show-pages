@@ -77,7 +77,7 @@ parcelRequire = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({17:[function(require,module,exports) {
+})({16:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -107,7 +107,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],11:[function(require,module,exports) {
+},{}],13:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -138,13 +138,13 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":17}],8:[function(require,module,exports) {
+},{"./bundle-url":16}],10:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":11}],15:[function(require,module,exports) {
+},{"_css_loader":13}],15:[function(require,module,exports) {
 module.exports = {
   "O_RDONLY": 0,
   "O_WRONLY": 1,
@@ -355,7 +355,7 @@ module.exports = {
   "UV_UDP_REUSEADDR": 4
 }
 ;
-},{}],13:[function(require,module,exports) {
+},{}],14:[function(require,module,exports) {
 'use strict';
 
 var _constants = require('constants');
@@ -609,13 +609,17 @@ var _constants = require('constants');
              * Copyright 2014 yanhaijing. All Rights Reserved
              * Licensed under MIT (https://github.com/yanhaijing/zepto.fullpage/blob/master/LICENSE)
              */
-},{"constants":15}],6:[function(require,module,exports) {
+},{"constants":15}],8:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = 100;
+exports.default = 10000;
+},{}],6:[function(require,module,exports) {
+module.exports = [{background: {color: "red"}, items: {"x-1": {data: {animate: "flash", dration: "4s", count: 5, show: 500, delay: 1000}}}}];
+},{}],18:[function(require,module,exports) {
+module.exports = {title: "hello wrold 3456", keywords: "show pages", description: "hello show pages", designWidth: 750, bgm: "url", startIndex: 2};
 },{}],4:[function(require,module,exports) {
 'use strict';
 
@@ -623,19 +627,28 @@ require('../css/index.styl');
 
 require('../lib/fullpage');
 
-window.path = document.querySelector('meta[name="path"]').getAttribute('content');
+var _index = require('../../example/js/index.js');
 
-// const a = require.resolve('../../example/js/index.js');
-var pages = require('../../example/js/index.js');
+var _index2 = _interopRequireDefault(_index);
 
-console.log('pages->', pages);
+var _page = require('../../example/page.yaml');
+
+var _page2 = _interopRequireDefault(_page);
+
+var _app = require('../../example/app.yaml');
+
+var _app2 = _interopRequireDefault(_app);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+console.log('pages----->', _index2.default, _page2.default, _app2.default);
 
 var init = function init() {
   // alert(1)
 };
 
 init();
-},{"../css/index.styl":8,"../lib/fullpage":13,"../../example/js/index.js":6}],19:[function(require,module,exports) {
+},{"../css/index.styl":10,"../lib/fullpage":14,"../../example/js/index.js":8,"../../example/page.yaml":6,"../../example/app.yaml":18}],17:[function(require,module,exports) {
 
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -665,7 +678,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62005' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61140' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -804,5 +817,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[19,4])
-//# sourceMappingURL=/js.4a1fcc98.map
+},{}]},{},[17,4])
+//# sourceMappingURL=/js.1ed74691.map

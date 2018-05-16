@@ -4,8 +4,8 @@
   "description": "mobile show pages",
   "main": "index.html",
   "scripts": {
-    "serve": "node ../cli.js serve",
-    "build": "node ../cli.js build",
+    "serve": "node ../bin/cli.js serve",
+    "build": "node ../bin/cli.js build",
     "clean": "rm -rf ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
