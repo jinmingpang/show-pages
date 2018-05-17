@@ -1,4 +1,39 @@
-html
-  background yellow
-h1
-  color blue
+@import "./mixins";
+
+.ui-hide
+  display none
+
+@keyframes arrow
+  0%,30%
+    opacity: 0.2
+    -webkit-transform translate(0,10px)
+  60%
+    opacity 1
+    -webkit-transform translate(0,0)
+  100%
+    opacity 0.2
+    -webkit-transform translate(0, -5px)
+
+.fullpage-arrow
+  position fixed
+  left 50%
+  bottom  5%
+  width w = 34px
+  height h = 34px
+  margin-left -(w / 2)
+  text-align center
+  i
+    position absolute
+    left 50%
+    top 10px
+    margin-left -37px
+    width 60px
+    height 48px
+    color grey
+    font-size 60px
+    animation arrow 1.5s infinite ease-in-out
+
+#root
+  full-screen()
+
+

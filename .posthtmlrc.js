@@ -3,7 +3,7 @@ const config = require('./app.json') || {};
 module.exports = {
   plugins: {
     'posthtml-px2rem': {
-      rootValue: config.designWidth || 750,
+      rootValue: (config.designWidth || 750) / 10,
       unitPrecision: 5,
       propList: ['*'],
       selectorBlackList: [],

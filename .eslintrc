@@ -6,6 +6,7 @@
     "es6": true
   },
   "rules": {
+    "guard-for-in": [0],
     "generator-star-spacing": [0],
     "consistent-return": [0],
     "global-require": [1],

@@ -10,7 +10,7 @@ module.exports = {
       browsers: ['Android > 4.4', 'iOS >= 8', 'last 2 versions'],
     },
     'postcss-pxtorem': {
-      rootValue: config.designWidth || 750,
+      rootValue: (config.designWidth || 750) / 10,
       unitPrecision: 5,
       propList: ['*'],
       selectorBlackList: [],

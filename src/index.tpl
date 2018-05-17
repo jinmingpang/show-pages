@@ -16,7 +16,8 @@
     <title><% this.title %></title>
   </head>
   <body>
-    <div class="root"></div>
+    <div id="root"></div>
+    <span class="fullpage-arrow"><i></i></span>
     <script src="js/index.js"></script>
   </body>
 </html>

@@ -1,6 +1,18 @@
 -
   background:
     color: red
+  doms:
+    x-1:
+      cssanimate:
+        key: flash
+        dration: 4s
+        count: 5 #
+        infinite: true
+        showtime: 500
+        delay: 1000
+-
+  background:
+    color: yellow
   items:
     x-1:
       data:

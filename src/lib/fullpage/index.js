@@ -5,8 +5,6 @@
  * Licensed under MIT (https://github.com/yanhaijing/zepto.fullpage/blob/master/LICENSE)
  */
 
-import { DH_CHECK_P_NOT_SAFE_PRIME } from "constants";
-
 (function(window) {
   var d = {
       page: '.page',

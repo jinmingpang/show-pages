@@ -1,46 +1,106 @@
 import tpl from '../lib/art-tempalte';
+import { getPageContent } from './template';
 
-export const PAGE_KEY = '_page';
+const HASH_PAGE_KEY = '_page';
 
-export const loadHtml = () => {
+export const initHtml = () => {
 
   const html = `
     <article class="fullpage-wrapper">
-    {{ each pages}}
-      <section class="page page-{{index+1}}" data-index={{index+1}}></section>
+    {{ each pages page i}}
+      <section class="page page-{{i+1}}" data-index={{i+1}} ></section>
     {{ /each }}
     </article>
   `;
 
-  document.querySelector('.root').innerHTML = tpl.render(html, {pages: GLOBAL.pages});
+  document.getElementById('root').innerHTML = tpl.render(html, {pages: GLOBAL.pages});
 };
 
-export const setPageHash = (page) => {
-
+export const setPageHash = index => {
   if(/#/.test(location.href)){
-    location.href = location.href.replace(new RegExp(`(?<=${PAGE_KEY}=).*`), page);
+    location.href = location.href.replace(new RegExp(`(?<=${HASH_PAGE_KEY}=).*`), index);
   }else{
-    location.href += `#${PAGE_KEY}=${page}`;
+    location.href += `#${HASH_PAGE_KEY}=${index}`;
   }
 };
 
 export const getPageByHash = () => {
-
   const arr = location.hash.replace('#', '').split('=');
-  const page = arr[arr.indexOf(PAGE_KEY)+1];
-  if(isNaN(parseInt(page, 10))){
-    return -1;
+  const index = parseInt(arr[arr.indexOf(HASH_PAGE_KEY)+1], 10);
+
+  if(isNaN(index) || index > GLOBAL.pages.length){
+    return GLOBAL.config.startIndex || 1;
+  }
+  return index;
+};
+
+export const initArrowIcon = () => {
+  document.querySelector('.fullpage-arrow i').classList.add('iconfont', 'icon-ico-two-up-arrow');
+};
+
+export const beforeChangePage = data => {
+  const index = data.cur + 1;
+  const $page = document.querySelector(`.page-${index}`);
+
+  if(!$page) {
+    return;
   }
 
-  return page;
-};
-
-export const beforeChangePage = () => {
-  location.href = ''
-};
-
-export const onChagePange = () => {
+  const { doms } = GLOBAL.pages[index-1] || {};
+  [].forEach.call($page.querySelectorAll('.css-animate'), dom => {
+    dom.classList.remove(doms[dom.dataset.key].cssanimate.key);
+    dom.classList.add('ui-hide');
+  });
 
 };
 
-export const afterChangePage = () => {};
+export const onChagePange = data => {
+  const index = data.cur + 1;
+  const $page = document.querySelector(`.page-${index}`);
+
+  setPageHash(index);
+
+  if(!$page || $page.dataset.load === '1') {
+    return;
+  }
+
+  $page.innerHTML = getPageContent($page, GLOBAL.pages[index-1]);
+  $page.dataset.load = '1';
+
+};
+
+export const afterChangePage = data => {
+  const index = data.cur + 1;
+  const $page = document.querySelector(`.page-${index}`);
+
+  if(!$page) {
+    return;
+  }
+
+  const { doms } = GLOBAL.pages[index-1];
+
+  [].forEach.call($page.querySelectorAll('.css-animate'), dom => {
+    const temp =  doms[dom.dataset.key].cssanimate || {};
+    const cssanimate = Object.assign({}, temp, {
+      'timing-function': temp.timing,
+      'iteration-count': temp.count,
+    });
+
+    let t = setTimeout(() => {
+      ['delay', 'duration', 'timing', 'direction', 'infinite', 'count'].forEach(key => {
+        // eslint-disable-next-line
+        dom.style.cssText += `;animation-${key}=${cssanimate[key]}`;
+      });
+
+      dom.classList.add(cssanimate.key);
+      dom.classList.remove('ui-hide');
+
+      clearTimeout(t);
+      t = null;
+    }, cssanimate.showtime);
+  });
+
+};
+
+export const orientationchange = () => {};
+
