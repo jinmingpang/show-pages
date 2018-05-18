@@ -1,23 +1,24 @@
-
 const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
 
 // 删除文件
-const removeFile = (filePath) => {
-  if(fs.existsSync(filePath)){
+const removeFile = filePath => {
+  if (fs.existsSync(filePath)) {
     fs.unlinkSync(filePath);
   }
 };
 
 // 删除文件夹
 const removeDirRecursiveSync = srouce => {
-  if(fs.existsSync(srouce)) {
+  if (fs.existsSync(srouce)) {
     fs.readdirSync(srouce).forEach(file => {
       const curPath = `${srouce}/${file}`;
-      if(fs.lstatSync(curPath).isDirectory()) { // recurse
+      if (fs.lstatSync(curPath).isDirectory()) {
+        // recurse
         removeDirRecursiveSync(curPath);
-      } else { // delete file
+      } else {
+        // delete file
         removeFile(curPath);
       }
     });
@@ -26,8 +27,8 @@ const removeDirRecursiveSync = srouce => {
 };
 
 // 检查需求文件夹,不存在则创建一个新文件夹
-const checkDir = (srouce) => {
-  if(fs.existsSync(srouce)){
+const checkDir = srouce => {
+  if (fs.existsSync(srouce)) {
     removeDirRecursiveSync(srouce);
   }
   fs.mkdirSync(srouce);
@@ -37,8 +38,8 @@ const checkDir = (srouce) => {
 const copyFileSync = (source, target, parser) => {
   let targetFile = target;
   // if target is a directory a new file with the same name will be created
-  if(fs.existsSync(target)) {
-    if(fs.lstatSync(target).isDirectory()) {
+  if (fs.existsSync(target)) {
+    if (fs.lstatSync(target).isDirectory()) {
       targetFile = path.join(target, path.basename(source));
     }
   }
@@ -53,29 +54,30 @@ const copyDirRecursiveSync = (source, target, options = {}) => {
   let files = [];
   const { filter, parser, withRootDir = true } = options;
 
-
   // check if folder needs to be created or integrated
   let targetFolder = path.join(target, path.basename(source));
 
-  if(!withRootDir){ // not copy with the root dir
+  if (!withRootDir) {
+    // not copy with the root dir
     const targetDirName = path.basename(target);
     targetFolder = targetFolder.replace(`${targetDirName}/src`, targetDirName);
   }
 
-  if(!fs.existsSync(targetFolder)) {
+  if (!fs.existsSync(targetFolder)) {
     fs.mkdirSync(targetFolder);
   }
 
   // copy recursive
-  if ( fs.lstatSync(source).isDirectory() ) {
+  if (fs.lstatSync(source).isDirectory()) {
     files = fs.readdirSync(source);
     files.forEach(file => {
       const curSource = path.join(source, file);
-      if(filter) { // filter the copy
-        if(!filter(curSource)) return;
+      if (filter) {
+        // filter the copy
+        if (!filter(curSource)) return;
       }
 
-      if(fs.lstatSync(curSource).isDirectory()) {
+      if (fs.lstatSync(curSource).isDirectory()) {
         copyDirRecursiveSync(curSource, targetFolder, options);
       } else {
         copyFileSync(curSource, targetFolder, parser);
@@ -94,16 +96,15 @@ const template = (tpl, data) => {
 
   const add = (line, js) => {
     /* eslint-disable no-unused-expressions */
-    js ? (code += line.match(reExp) ?
-      `${line}\n` : `r.push(${line});\n`) :
-        (code += line !== '' ?
-          `r.push("${line.replace(/"/g, '\\"')}");\n` :
-            '');
+    js
+      ? (code += line.match(reExp) ? `${line}\n` : `r.push(${line});\n`)
+      : (code += line !== '' ? `r.push("${line.replace(/"/g, '\\"')}");\n` : '');
     return add;
-  }
-  while(match = re.exec(tpl)) {
-      add(tpl.slice(cursor, match.index))(match[1], true);
-      cursor = match.index + match[0].length;
+  };
+
+  while ((match = re.exec(tpl))) {
+    add(tpl.slice(cursor, match.index))(match[1], true);
+    cursor = match.index + match[0].length;
   }
   add(tpl.substr(cursor, tpl.length - cursor));
   code += 'return r.join("");';
@@ -114,10 +115,10 @@ const template = (tpl, data) => {
 const srcParser = (fileName, target) => {
   const file = fs.readFileSync(fileName, 'utf-8');
 
-  if(/lib|assets/.test(fileName)) return file;
+  if (/lib|assets/.test(fileName)) return file;
 
-  if(/\.js|styl/.test(fileName)) {
-    const resolvePath =  path.relative(path.dirname(target), paths.user.root);
+  if (/\.js|styl/.test(fileName)) {
+    const resolvePath = path.relative(path.dirname(target), paths.user.root);
     return file.replace(/USER_ROOT_PATH/g, resolvePath);
   }
 
@@ -125,9 +126,9 @@ const srcParser = (fileName, target) => {
 };
 
 const srcFilter = filePath => {
-  if(/DS_Store|src\/(app\.yaml|index.tpl)/.test(filePath)) return false;
+  if (/DS_Store|src\/(app\.yaml|index.tpl)/.test(filePath)) return false;
   return true;
-}
+};
 
 module.exports = {
   removeDirRecursiveSync,

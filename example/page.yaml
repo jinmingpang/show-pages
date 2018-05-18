@@ -2,20 +2,30 @@
   background:
     color: red
   doms:
-    x-1:
+    bei-word:
+      image: true
+      postion: [center, middle]
       cssanimate:
-        key: flash
-        dration: 4s
-        count: 5 #
-        infinite: true
+        key: bounceInUp
+        duration: 4s
         showtime: 500
+        delay: 1000
+    w-100:
+      image: true
+      postion: [100, 100]
+      cssanimate:
+        key: slideInLeft
+        duration: 4s
+        showtime: 2500
         delay: 1000
 -
   background:
     color: yellow
   items:
-    x-1:
-      data:
+    lun-qi-jian-dian:
+      image: true
+      postion: [100, 100]
+      cssanimate:
         animate: flash
         dration: 4s
         count: 5 # infinite

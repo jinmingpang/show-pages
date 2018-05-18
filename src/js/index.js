@@ -1,16 +1,13 @@
 import pages from 'USER_ROOT_PATH/page.yaml';
 import config from '../../app.json';
 
-import '../assets/fonts/iconfont.css';
-import '../lib/normalize/index.css';
-import '../lib/fullpage/index.css';
 import '../lib/fullpage';
 import '../lib/fiexible';
 import '../css/index.styl';
 
 import * as page from './page';
 
-if(config.startIndex > pages.length){
+if (config.startIndex > pages.length) {
   throw new Error('起始页数，不能大于总页数');
 }
 
@@ -39,16 +36,14 @@ const initFullPage = index => {
 const init = () => {
   const index = page.getPageByHash();
   page.initHtml();
-  page.setPageHash(index);
   page.initArrowIcon();
-  initFullPage(index-1);
+  page.setPageHash(index);
+  initFullPage(index - 1);
 
   // move to the target page when hashchange
   window.onhashchange = () => {
-    GLOBAL.$wrapper.moveTo(page.getPageByHash()-1);
+    GLOBAL.$wrapper.moveTo(page.getPageByHash() - 1);
   };
 };
 
 init();
-
-

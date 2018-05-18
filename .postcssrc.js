@@ -2,9 +2,6 @@ const config = require('./app.json') || {};
 
 module.exports = {
   plugins: {
-    'postcss-assets': {
-
-    },
     autoprefixer: {
       grid: false,
       browsers: ['Android > 4.4', 'iOS >= 8', 'last 2 versions'],

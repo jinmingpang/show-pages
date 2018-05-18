@@ -12,10 +12,11 @@ export const getPageContent = ($page, source = {}) => {
 
   const html = `
     {{ each doms dom key }}
-      <div class="{{ key }} {{ dom.cssanimate ? dom.cssanimate.key : '' }}"
+      <div class="{{ key }} {{ dom.image && 'img' || '' }}
+        {{ dom.cssanimate && (dom.cssanimate.key + ' css-animate animated ui-hide') || '' }}"
         data-key={{ key }} ></div>
     {{ /each }}
   `;
 
-  return tpl.render(html, {doms});
+  return tpl.render(html, { doms });
 };

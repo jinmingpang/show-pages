@@ -1,1 +1,10 @@
-{"title":"hello wrold 3456","keywords":"show pages","description":"hello show pages","designWidth":1080,"bgm":"url","shortcutIcon":"http://g.alicdn.com/mui/global/1.2.35/file/favicon.ico","appleTouchIcon":"http://gw.alicdn.com/tfs/TB1m9hGhXOWBuNjy0FiXXXFxVXa-152-152.jpg","startIndex":1}
+{
+  "title": "hello wrold 3456",
+  "keywords": "show pages",
+  "description": "hello show pages",
+  "designWidth": 1080,
+  "bgm": "url",
+  "shortcutIcon": "http://g.alicdn.com/mui/global/1.2.35/file/favicon.ico",
+  "appleTouchIcon": "http://gw.alicdn.com/tfs/TB1m9hGhXOWBuNjy0FiXXXFxVXa-152-152.jpg",
+  "startIndex": 1
+}

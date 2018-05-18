@@ -9,10 +9,7 @@
     "clean": "rm -rf ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "mobile",
-    "fullpage"
-  ],
+  "keywords": ["mobile", "fullpage"],
   "author": "",
   "license": "ISC",
   "devDependencies": {},

@@ -20,5 +20,6 @@ module.exports = {
     config: `${libRoot}/app.json`,
     entryTpl: `${libRoot}/src/index.tpl`,
     entryFile: `${libRoot}/dist/index.html`,
+    imgstyl: `${libRoot}/dist/css/imgstyl.styl`,
   },
 };

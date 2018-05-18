@@ -4,7 +4,6 @@ import { getPageContent } from './template';
 const HASH_PAGE_KEY = '_page';
 
 export const initHtml = () => {
-
   const html = `
     <article class="fullpage-wrapper">
     {{ each pages page i}}
@@ -13,22 +12,22 @@ export const initHtml = () => {
     </article>
   `;
 
-  document.getElementById('root').innerHTML = tpl.render(html, {pages: GLOBAL.pages});
+  document.getElementById('root').innerHTML = tpl.render(html, { pages: GLOBAL.pages });
 };
 
 export const setPageHash = index => {
-  if(/#/.test(location.href)){
+  if (/#/.test(location.href)) {
     location.href = location.href.replace(new RegExp(`(?<=${HASH_PAGE_KEY}=).*`), index);
-  }else{
+  } else {
     location.href += `#${HASH_PAGE_KEY}=${index}`;
   }
 };
 
 export const getPageByHash = () => {
   const arr = location.hash.replace('#', '').split('=');
-  const index = parseInt(arr[arr.indexOf(HASH_PAGE_KEY)+1], 10);
+  const index = parseInt(arr[arr.indexOf(HASH_PAGE_KEY) + 1], 10);
 
-  if(isNaN(index) || index > GLOBAL.pages.length){
+  if (isNaN(index) || index > GLOBAL.pages.length) {
     return GLOBAL.config.startIndex || 1;
   }
   return index;
@@ -42,16 +41,15 @@ export const beforeChangePage = data => {
   const index = data.cur + 1;
   const $page = document.querySelector(`.page-${index}`);
 
-  if(!$page) {
+  if (!$page) {
     return;
   }
 
-  const { doms } = GLOBAL.pages[index-1] || {};
+  const { doms } = GLOBAL.pages[index - 1] || {};
   [].forEach.call($page.querySelectorAll('.css-animate'), dom => {
     dom.classList.remove(doms[dom.dataset.key].cssanimate.key);
     dom.classList.add('ui-hide');
   });
-
 };
 
 export const onChagePange = data => {
@@ -60,47 +58,53 @@ export const onChagePange = data => {
 
   setPageHash(index);
 
-  if(!$page || $page.dataset.load === '1') {
+  if (!$page || $page.dataset.load === '1') {
     return;
   }
 
-  $page.innerHTML = getPageContent($page, GLOBAL.pages[index-1]);
+  $page.innerHTML = getPageContent($page, GLOBAL.pages[index - 1]);
   $page.dataset.load = '1';
-
 };
 
 export const afterChangePage = data => {
   const index = data.cur + 1;
   const $page = document.querySelector(`.page-${index}`);
 
-  if(!$page) {
+  if (!$page) {
     return;
   }
 
-  const { doms } = GLOBAL.pages[index-1];
+  const { doms } = GLOBAL.pages[index - 1];
 
   [].forEach.call($page.querySelectorAll('.css-animate'), dom => {
-    const temp =  doms[dom.dataset.key].cssanimate || {};
+    const temp = doms[dom.dataset.key].cssanimate || {};
     const cssanimate = Object.assign({}, temp, {
       'timing-function': temp.timing,
       'iteration-count': temp.count,
     });
 
+    const { key: aniamteKey, showtime: time } = cssanimate;
+
     let t = setTimeout(() => {
-      ['delay', 'duration', 'timing', 'direction', 'infinite', 'count'].forEach(key => {
-        // eslint-disable-next-line
-        dom.style.cssText += `;animation-${key}=${cssanimate[key]}`;
+      let style = ';';
+
+      ['delay', 'duration', 'timing-function', 'direction', 'iteration-count'].forEach(key => {
+        if (!cssanimate[key]) {
+          return;
+        }
+
+        style += `animation-${key}: ${cssanimate[key]};`;
       });
 
-      dom.classList.add(cssanimate.key);
+      dom.style.cssText += style; // eslint-disable-line
+
+      dom.classList.add(aniamteKey);
       dom.classList.remove('ui-hide');
 
       clearTimeout(t);
       t = null;
-    }, cssanimate.showtime);
+    }, time);
   });
-
 };
 
 export const orientationchange = () => {};
-

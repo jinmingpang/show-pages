@@ -1,1 +1,1 @@
-export default  10000;
+export default 10000;

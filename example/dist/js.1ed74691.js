@@ -78,89 +78,20 @@ parcelRequire = (function (modules, cache, entry) {
   // Override the current require with this new one
   return newRequire;
 })({6:[function(require,module,exports) {
-module.exports = [{background: {color: "red"}, doms: {"x-1": {cssanimate: {key: "flash", dration: "4s", count: 5, infinite: true, showtime: 500, delay: 1000}}}}, {background: {color: "yellow"}, items: {"x-1": {data: {animate: "flash", dration: "4s", count: 5, show: 500, delay: 1000}}}}];
+module.exports = [{background: {color: "red"}, doms: {"bei-word": {image: true, postion: ["center", "middle"], cssanimate: {key: "bounceInUp", duration: "4s", showtime: 500, delay: 1000}}, "w-100": {image: true, postion: [100, 100], cssanimate: {key: "slideInLeft", duration: "4s", showtime: 2500, delay: 1000}}}}, {background: {color: "yellow"}, items: {"lun-qi-jian-dian": {image: true, postion: [100, 100], cssanimate: {animate: "flash", dration: "4s", count: 5, show: 500, delay: 1000}}}}];
 },{}],8:[function(require,module,exports) {
-module.exports = {"title":"hello wrold 3456","keywords":"show pages","description":"hello show pages","designWidth":1080,"bgm":"url","shortcutIcon":"http://g.alicdn.com/mui/global/1.2.35/file/favicon.ico","appleTouchIcon":"http://gw.alicdn.com/tfs/TB1m9hGhXOWBuNjy0FiXXXFxVXa-152-152.jpg","startIndex":1};
-},{}],32:[function(require,module,exports) {
-var bundleURL = null;
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
+module.exports = {
+  "title": "hello wrold 3456",
+  "keywords": "show pages",
+  "description": "hello show pages",
+  "designWidth": 1080,
+  "bgm": "url",
+  "shortcutIcon": "http://g.alicdn.com/mui/global/1.2.35/file/favicon.ico",
+  "appleTouchIcon": "http://gw.alicdn.com/tfs/TB1m9hGhXOWBuNjy0FiXXXFxVXa-152-152.jpg",
+  "startIndex": 1
 }
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],25:[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-  newLink.onload = function () {
-    link.remove();
-  };
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":32}],12:[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-},{"./iconfont.eot":[["iconfont.78d9c865.eot",26],26],"./iconfont.ttf":[["iconfont.b8f05644.ttf",27],27],"./iconfont.svg":[["iconfont.b7ef0389.svg",28],28],"_css_loader":25}],14:[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-},{"_css_loader":25}],16:[function(require,module,exports) {
-
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-},{"_css_loader":25}],29:[function(require,module,exports) {
+;
+},{}],14:[function(require,module,exports) {
 /*!
  * zepto.fullpage.js v0.5.0 (https://github.com/yanhaijing/zepto.fullpage)
  * API https://github.com/yanhaijing/zepto.fullpage/blob/master/doc/api.md
@@ -412,7 +343,7 @@ module.exports = reloadCSS;
         return new Fullpage(this, option);
     };
 })(window);
-},{}],30:[function(require,module,exports) {
+},{}],16:[function(require,module,exports) {
 (function flexible(window, document) {
   var docEl = document.documentElement;
   var dpr = window.devicePixelRatio || 1;
@@ -456,13 +387,74 @@ module.exports = reloadCSS;
     docEl.removeChild(fakeBody);
   }
 })(window, document);
-},{}],10:[function(require,module,exports) {
+},{}],26:[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],21:[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    link.remove();
+  };
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":26}],10:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":25}],31:[function(require,module,exports) {
+},{"./../../example/images/bei-word.png":[["bei-word.c9271d5c.png",22],22],"./../../example/images/w-100.png":[["w-100.c47da502.png",23],23],"_css_loader":21}],25:[function(require,module,exports) {
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*! art-template@4.12.2 for browser | https://github.com/aui/art-template */
@@ -912,7 +904,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     e.exports = n(3);
   }]);
 });
-},{}],36:[function(require,module,exports) {
+},{}],24:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -939,11 +931,11 @@ var getPageContent = exports.getPageContent = function getPageContent($page) {
 
   $page.style.cssText += background; // eslint-disable-line
 
-  var html = '\n    {{ each doms dom key }}\n      <div class="{{ key }} {{ dom.cssanimate ? dom.cssanimate.key : \'\' }}"\n        data-key={{ key }} ></div>\n    {{ /each }}\n  ';
+  var html = '\n    {{ each doms dom key }}\n      <div class="{{ key }} {{ dom.image && \'img\' || \'\' }}\n        {{ dom.cssanimate && (dom.cssanimate.key + \' css-animate animated ui-hide\') || \'\' }}"\n        data-key={{ key }} ></div>\n    {{ /each }}\n  ';
 
   return _artTempalte2.default.render(html, { doms: doms });
 };
-},{"../lib/art-tempalte":31}],18:[function(require,module,exports) {
+},{"../lib/art-tempalte":25}],12:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -962,7 +954,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var HASH_PAGE_KEY = '_page';
 
 var initHtml = exports.initHtml = function initHtml() {
-
   var html = '\n    <article class="fullpage-wrapper">\n    {{ each pages page i}}\n      <section class="page page-{{i+1}}" data-index={{i+1}} ></section>\n    {{ /each }}\n    </article>\n  ';
 
   document.getElementById('root').innerHTML = _artTempalte2.default.render(html, { pages: GLOBAL.pages });
@@ -1039,23 +1030,34 @@ var afterChangePage = exports.afterChangePage = function afterChangePage(data) {
       'iteration-count': temp.count
     });
 
+    var aniamteKey = cssanimate.key,
+        time = cssanimate.showtime;
+
+
     var t = setTimeout(function () {
-      ['delay', 'duration', 'timing', 'direction', 'infinite', 'count'].forEach(function (key) {
-        // eslint-disable-next-line
-        dom.style.cssText += ';animation-' + key + '=' + cssanimate[key];
+      var style = ';';
+
+      ['delay', 'duration', 'timing-function', 'direction', 'iteration-count'].forEach(function (key) {
+        if (!cssanimate[key]) {
+          return;
+        }
+
+        style += 'animation-' + key + ': ' + cssanimate[key] + ';';
       });
 
-      dom.classList.add(cssanimate.key);
+      dom.style.cssText += style; // eslint-disable-line
+
+      dom.classList.add(aniamteKey);
       dom.classList.remove('ui-hide');
 
       clearTimeout(t);
       t = null;
-    }, cssanimate.showtime);
+    }, time);
   });
 };
 
 var orientationchange = exports.orientationchange = function orientationchange() {};
-},{"../lib/art-tempalte":31,"./template":36}],4:[function(require,module,exports) {
+},{"../lib/art-tempalte":25,"./template":24}],4:[function(require,module,exports) {
 'use strict';
 
 var _page = require('../../example/page.yaml');
@@ -1065,12 +1067,6 @@ var _page2 = _interopRequireDefault(_page);
 var _app = require('../../app.json');
 
 var _app2 = _interopRequireDefault(_app);
-
-require('../assets/fonts/iconfont.css');
-
-require('../lib/normalize/index.css');
-
-require('../lib/fullpage/index.css');
 
 require('../lib/fullpage');
 
@@ -1115,8 +1111,8 @@ var initFullPage = function initFullPage(index) {
 var init = function init() {
   var index = page.getPageByHash();
   page.initHtml();
-  page.setPageHash(index);
   page.initArrowIcon();
+  page.setPageHash(index);
   initFullPage(index - 1);
 
   // move to the target page when hashchange
@@ -1126,7 +1122,7 @@ var init = function init() {
 };
 
 init();
-},{"../../example/page.yaml":6,"../../app.json":8,"../assets/fonts/iconfont.css":12,"../lib/normalize/index.css":14,"../lib/fullpage/index.css":16,"../lib/fullpage":29,"../lib/fiexible":30,"../css/index.styl":10,"./page":18}],37:[function(require,module,exports) {
+},{"../../example/page.yaml":6,"../../app.json":8,"../lib/fullpage":14,"../lib/fiexible":16,"../css/index.styl":10,"./page":12}],31:[function(require,module,exports) {
 
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -1156,7 +1152,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60721' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49936' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -1295,5 +1291,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[37,4])
+},{}]},{},[31,4])
 //# sourceMappingURL=/js.1ed74691.map

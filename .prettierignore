@@ -1,4 +1,8 @@
-/node_modules
-/src/lib
+/bak
 /dist
-/package.json
+/example/dist
+/example/.cache
+/src/lib
+/node_modules
+/src/assets
+

@@ -1,26 +1,39 @@
-@import "./mixins";
+@import '../assets/fonts/iconfont.css'
+@import '../lib/normalize/index.css'
+@import '../lib/fullpage/index.css'
+@import '../lib/aniamte-css/index.css'
+@import '../css/imgstyl.styl'
+@import './mixins'
 
 .ui-hide
   display none
 
+.img
+  background-size 100% 100%
+  background-repeat no-repeat
+  background-position top center
+
+#root
+  full-screen()
+
 @keyframes arrow
-  0%,30%
-    opacity: 0.2
-    -webkit-transform translate(0,10px)
+  0%, 30%
+    opacity .2
+    -webkit-transform translate(0, 10px)
   60%
     opacity 1
-    -webkit-transform translate(0,0)
+    -webkit-transform translate(0, 0)
   100%
-    opacity 0.2
+    opacity .2
     -webkit-transform translate(0, -5px)
 
 .fullpage-arrow
   position fixed
   left 50%
   bottom  5%
-  width w = 34px
-  height h = 34px
-  margin-left -(w / 2)
+  width $w = 34px
+  height 34px
+  margin-left -($w / 2)
   text-align center
   i
     position absolute
@@ -33,7 +46,5 @@
     font-size 60px
     animation arrow 1.5s infinite ease-in-out
 
-#root
-  full-screen()
 
 

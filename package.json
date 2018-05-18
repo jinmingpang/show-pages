@@ -7,9 +7,10 @@
     "serve": "node ./bin/cli serve",
     "build": "node ./bin/cli build",
     "lint:staged": "lint-staged",
-    "lint:style": "stylint ./src",
-    "lint:js": "eslint ./{src,bin}/**/*.js",
-    "format": "prettier --write './src/{js,plugins,utils}/**/*.{js,yaml}'"
+    "lint:style": "stylint ./src ./example",
+    "lint:js": "eslint --color './{src,bin,test,example}/**/*.{js}'",
+    "lint:fix": "eslint --color --fix './{src,bin,test,example}/**/*.{js}'",
+    "format": "prettier --write './{src,bin,test,example}/**/*.{js,json,md}' ./app.json"
   },
   "keywords": [
     "mobile",
@@ -30,9 +31,8 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.11.0",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.6",
     "lint-staged": "^6.0.0",
-    "postcss-assets": "^5.0.0",
     "postcss-modules": "^1.1.0",
     "postcss-pxtorem": "^4.0.1",
     "posthtml-px2rem": "^0.0.3",
@@ -41,8 +41,8 @@
     "stylus": "^0.54.5"
   },
   "lint-staged": {
-    "*.js": "npm run lint:js && npm run format",
-    "*.styl": "npm run lint:style"
+    "./{src,bin,test,example}/**/*.{js}": "npm run lint:js && npm run lint:fix && npm run format",
+    "./{src,example}/**/*.{styl}": "npm run lint:style"
   },
   "husky": {
     "hooks": {

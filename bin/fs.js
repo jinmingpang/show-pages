@@ -17,4 +17,3 @@ exports.exists = filename => {
     fs.exists(filename, resolve);
   });
 };
-

@@ -1,5 +1,6 @@
 /bak
+/dist
 /example/dist
 /src/lib
-/dist
 /node_modules
+/src/assets

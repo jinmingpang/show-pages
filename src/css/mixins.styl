@@ -5,3 +5,20 @@ full-screen()
   left 0
   right 0
   bottom 0
+
+img-pos($w = 0, $h = 0, $l = -1, $t = -1, $b = -1, $r = -1)
+  position absolute
+  if $l > -1
+    left $l * 1px
+  else if $l == 'center'
+    left 50%
+    margin-left (- ($w / 2)) * 1px
+  if $t > -1
+    top $t * 1px
+  else if $t == 'middle'
+    top 50%
+    margin-top (- ($h / 2)) * 1px
+  if $b > -1
+    left $b * 1px
+  if $r > -1
+    left $r * 1px

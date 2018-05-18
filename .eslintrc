@@ -6,6 +6,8 @@
     "es6": true
   },
   "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "semi": "error",
     "guard-for-in": [0],
     "generator-star-spacing": [0],
     "consistent-return": [0],
