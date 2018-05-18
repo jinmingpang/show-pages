@@ -47,7 +47,10 @@ const command = spawn(
 );
 
 command.stdout.on('data', data => {
-  const str = String(data).replace('\n', '');
+  let str = String(data);
+  if (!(isBuild && str.indexOf('s\n├') > -1)) {
+    str = str.replace('\n', '');
+  }
 
   if (str.indexOf('Server running') > -1) {
     return logger.persistent(`${str}\n`);

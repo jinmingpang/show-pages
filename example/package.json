@@ -4,8 +4,8 @@
   "description": "mobile show pages example",
   "main": "index.html",
   "scripts": {
-    "serve": "node ../bin/cli serve",
-    "build": "node ../bin/cli build",
+    "serve": "npm run clean && node ../bin/cli serve",
+    "build": "npm run clean && node ../bin/cli build",
     "clean": "node ../bin/cli clean",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
