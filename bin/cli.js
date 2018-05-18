@@ -11,6 +11,14 @@ const utils = require('./utils');
 
 const args = process.argv.splice(2);
 
+if (args[0] === 'clean') {
+  // clean command
+  utils.removeDirRecursiveSync(paths.user.dist); // rm -rf dist
+  utils.removeDirRecursiveSync(paths.user.cache); // rm -rf .cache
+  logger.status(emoji.success, 'clean success', 'yellow');
+  return;
+}
+
 const opts = {
   serve: '--no-cache',
   build: `--detailed-report --no-source-maps --no-cache -d ${paths.user.dist} --public-url ./`,

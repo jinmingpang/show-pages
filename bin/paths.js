@@ -7,6 +7,7 @@ module.exports = {
   user: {
     root: userRoot,
     path: path.relative(`${libRoot}/src`, userRoot),
+    cache: `${userRoot}/.cache`,
     dist: `${userRoot}/dist`,
     config: `${userRoot}/app.yaml`,
     pageConfig: `${userRoot}/page.yaml`,

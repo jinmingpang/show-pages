@@ -8,8 +8,8 @@
     "build": "node ./bin/cli build",
     "lint:staged": "lint-staged",
     "lint:style": "stylint ./src ./example",
-    "lint:js": "eslint --color './{src,bin,test,example}/**/*.{js}'",
-    "lint:fix": "eslint --color --fix './{src,bin,test,example}/**/*.{js}'",
+    "lint:js": "eslint --color --ext js ./{src,bin,test,example}",
+    "lint:fix": "eslint --color --ext js --fix ./{src,bin,test,example}",
     "format": "prettier --write './{src,bin,test,example}/**/*.{js,json,md}' ./app.json"
   },
   "keywords": [
@@ -41,8 +41,9 @@
     "stylus": "^0.54.5"
   },
   "lint-staged": {
-    "./{src,bin,test,example}/**/*.{js}": "npm run lint:js && npm run lint:fix && npm run format",
-    "./{src,example}/**/*.{styl}": "npm run lint:style"
+    "*.js": ["npm run lint:fix", "npm run format", "git add --all"],
+    "*.{md,json}": ["npm run format", "git add --all"],
+    "*.styl": "npm run lint:style"
   },
   "husky": {
     "hooks": {

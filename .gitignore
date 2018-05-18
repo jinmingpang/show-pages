@@ -1,9 +1,9 @@
 /dist
-node_modules/
+/node_modules
 npm-debug.log.*
 yarn.lock
 package-lock.json
 .vscode
 .DS_Store
 .tmp
-.cache
+/example/.cache

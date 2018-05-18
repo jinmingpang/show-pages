@@ -1,12 +1,12 @@
 {
-  "name": "show-pages",
+  "name": "show-pages-example",
   "version": "1.0.0",
-  "description": "mobile show pages",
+  "description": "mobile show pages example",
   "main": "index.html",
   "scripts": {
     "serve": "node ../bin/cli serve",
     "build": "node ../bin/cli build",
-    "clean": "rm -rf ./dist",
+    "clean": "node ../bin/cli clean",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["mobile", "fullpage"],
