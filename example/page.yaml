@@ -4,7 +4,7 @@
   doms:
     bei-word:
       image: true
-      postion: [center, middle]
+      postion: [center, middle] # da-run-fa
       cssanimate:
         key: bounceInUp
         duration: 4s
@@ -18,16 +18,21 @@
         duration: 4s
         showtime: 2500
         delay: 1000
--
-  background:
-    color: yellow
-  items:
-    lun-qi-jian-dian:
+    da-run-fa:
       image: true
-      postion: [100, 100]
+      postion: [200, 200] # da-run-fa
       cssanimate:
-        animate: flash
-        dration: 4s
-        count: 5 # infinite
-        show: 500
-        delay: 1000
+        key: bounceIn
+        duration: 1s
+        showtime: 2000
+-
+  background: # di-ifer
+    color: yellow
+  doms:
+    di-ifer:
+      image: true
+      postion: [200, 200] # da-run-fa
+      cssanimate:
+        key: bounceIn
+        duration: 1s
+        showtime: 2000
