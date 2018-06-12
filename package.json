@@ -4,8 +4,8 @@
   "description": "render mobile show pages with simple a yaml config",
   "main": "index.html",
   "scripts": {
-    "serve": "node ./bin/cli serve",
-    "build": "node ./bin/cli build",
+    "serve": "cd example && npm run serve",
+    "build": "cd example && npm run build",
     "lint:staged": "lint-staged",
     "lint:style": "stylint ./src ./example",
     "lint:js": "eslint --color --ext js ./{src,bin,test,example}",
